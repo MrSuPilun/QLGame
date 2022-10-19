@@ -1,7 +1,7 @@
 <?php
-include ('../../layouts/header.php');
+include ('includes/header.php');
 ?>
-<link rel="stylesheet" href="homework.css">
+<link rel="stylesheet" href="css/homework.css">
 <?php
 
 function InThuMuc($data, &$str = "", $path = "")
@@ -27,7 +27,7 @@ function HienThiBaiTap($store)
 {
   $arr_dir = scandir($store);
   $arr_dir = array_values(array_diff($arr_dir, array('.', '..')));
-  echo "<ul>";
+  echo "<ul id='tree-folder'>";
   foreach ($arr_dir as $value) {
     $str = "";
     $path = "./$store/$value/path.json";
@@ -39,7 +39,7 @@ function HienThiBaiTap($store)
 }
 HienThiBaiTap("BaiTap");
 ?>
-<script src="homework.js"></script>
+<script src="js/homework.js"></script>
 <?php
-include ('../../layouts/footer.php');
+include ('includes/footer.php');
 ?>
