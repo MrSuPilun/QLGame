@@ -1,5 +1,7 @@
 <?php
-include ('includes/header.php');
+$p = 1;
+$page_title = 'Bài tập';
+include_once('includes/header.php');
 ?>
 <link rel="stylesheet" href="css/homework.css">
 <?php
@@ -37,10 +39,16 @@ function HienThiBaiTap($store)
   }
   echo "</ul>";
 }
-HienThiBaiTap("BaiTap");
 ?>
-<iframe name="myiframe" frameborder="0" width="500"></iframe>
+<div class="row">
+  <div class="col-12 col-md-4 col-xl-4 bd-sidebar">
+    <?php HienThiBaiTap("BaiTap"); ?>
+  </div>
+  <main class="col-12 col-md-8 col-xl-8 bd-content">
+    <iframe id="myiframe" name="myiframe" frameborder="0"></iframe>
+  </main>
+</div>
 <script src="js/homework.js"></script>
 <?php
-include ('includes/footer.php');
+include_once('includes/footer.php');
 ?>
