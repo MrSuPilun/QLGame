@@ -4,6 +4,7 @@
 	Website	:	http://www.edg3.co.uk/
 */
 * {
+	box-sizing: border-box;
 	border:0;
 	margin:0;
 	padding:0;
@@ -84,7 +85,7 @@ body {
 	height:auto;
 	margin:0 auto;
 	padding:0 0 20px;
-	width:751px;
+	/* width:751px; */
 }
 #content h1 {
 	border-bottom:1px dashed #999;
