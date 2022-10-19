@@ -3,6 +3,7 @@
 <head>
 	<title><?php echo $page_title; ?></title>	
 	<link rel="stylesheet" href="includes/style.css" type="text/css" />
+	<link rel="stylesheet" href="assets/vendor/fontawesome-free-6.2.0-web/css/all.min.css">
 	<link rel="stylesheet" href="assets/vendor/bootstrap-4.6.2-dist/css/bootstrap.min.css" type="text/css" media="screen" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 </head>
@@ -20,7 +21,7 @@
 	        <a class="nav-link" href="#">Thông tin nhóm <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="#">Bài tập</a>
+	        <a class="nav-link" href="homework.php">Bài tập</a>
 	      </li>
 	      <li class="nav-item">
 	        <a class="nav-link" href="#">Web</a>
