@@ -1,0 +1,74 @@
+ul {
+  list-style-type: none;
+}
+
+/* Style the caret/arrow */
+.caret {
+  cursor: pointer;
+  -webkit-user-select: none;
+  /* Safari 3.1+ */
+  -moz-user-select: none;
+  /* Firefox 2+ */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+}
+
+.caret::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f07b";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.caret-down::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f07c";
+
+}
+
+.file::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f15b";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Hide the nested list */
+.nested {
+  display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+  display: block;
+}
+
+#tree-folder li {
+  padding-left: 20px;
+}
+
+#myiframe {
+  width: 100%;
+  height: 100%;
+  overflow: hidden !important;
+}
+
+.bd-sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4rem;
+  z-index: 1000;
+  height: calc(100vh);
+  padding: 30px 10px;
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.bd-content {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+  padding: 0;
+}

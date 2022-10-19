@@ -1,9 +1,5 @@
-/*
-	Author	:	Christopher Robinson
-	Email		:	christopher@edg3.co.uk
-	Website	:	http://www.edg3.co.uk/
-*/
 * {
+	box-sizing: border-box;
 	border:0;
 	margin:0;
 	padding:0;
@@ -27,17 +23,7 @@ body {
 
 /* content */
 #content {
-	min-height: 720px;
-	margin:0 auto;
-	padding:0 0 20px;
-}
-#content h1 {
-	border-bottom:1px dashed #999;
-	font-size:1.8em;
-	padding:20px 0 0;
-}
-#content p {
-	padding:20px 20px 0;
+	min-height: 100vh;
 }
 
 /* footer */
@@ -51,19 +37,4 @@ footer {
 
 footer > div > a > b {
 	vertical-align: middle;
-}
-
-/* Added by Larry Ullman: */
-.error, .ad {
-	font-weight: bold;
-	color: #C00
-}
-
-input, select, .input {
-	padding: 5px;
-	font-weight: bold;
-	font-size: 1em;
-	color: #008040;
-	background: #FFFFFF;
-	border:1px dotted #004080;
 }

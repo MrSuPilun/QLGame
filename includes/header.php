@@ -3,10 +3,19 @@
 <head>
 	<title><?php echo $page_title; ?></title>	
 	<link rel="stylesheet" href="includes/style.css" type="text/css" />
+	<link rel="stylesheet" href="assets/vendor/fontawesome-free-6.2.0-web/css/all.min.css">
 	<link rel="stylesheet" href="assets/vendor/bootstrap-4.6.2-dist/css/bootstrap.min.css" type="text/css" media="screen" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 </head>
 <body>
+<?php
+function activeClasses($p=0, $i)
+{
+	if(!is_numeric($p))
+		$p = 0;
+	return $i === $p ? "active" : "";
+}
+?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <!-- <div class="container"> -->
 	  <a class="navbar-brand" href="#">Nhóm 7</a>
@@ -16,18 +25,18 @@
 
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Thông tin nhóm <span class="sr-only">(current)</span></a>
+	      <li class="nav-item <?php echo activeClasses($p, 0) ?>">
+	        <a class="nav-link" href="index.php">Thông tin nhóm</span></a>
 	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Bài tập</a>
+	      <li class="nav-item <?php echo activeClasses($p, 1) ?>">
+	        <a class="nav-link" href="homework.php">Bài tập</a>
 	      </li>
-	      <li class="nav-item">
+	      <li class="nav-item <?php echo activeClasses($p, 2) ?>">
 	        <a class="nav-link" href="#">Web</a>
 	      </li>
 	    </ul>
 	  </div>
   <!-- </div> -->
 </nav>
-<div id="content"><!-- Start of the page-specific content. -->
+<div id="content" class="container-fluid"><!-- Start of the page-specific content. -->
 <!-- Script 9.1 - header.html -->
