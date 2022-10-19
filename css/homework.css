@@ -32,9 +32,15 @@ ul, #myUL {
 .caret-down::before {
   font-family: "Font Awesome 5 Free";
   content: "\f07c";
-  /* -ms-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);   */
+  
+}
+
+.file::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f15b";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
 }
 /* Hide the nested list */
 .nested {

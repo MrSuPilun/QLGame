@@ -17,7 +17,7 @@ function InThuMuc($data, &$str = "", $path = "")
     }
     $str .= "</li>";
   } else {
-    $str .= "<li><a href='$path" . $data['file_name'] . "'>" . $data['name'] . "</a></li>";
+    $str .= "<li><a class='file' target='myiframe' href='$path" . $data['file_name'] . "'>" . $data['name'] . "</a></li>";
   }
   $str .= "</ul>";
   return $str;
@@ -39,6 +39,7 @@ function HienThiBaiTap($store)
 }
 HienThiBaiTap("BaiTap");
 ?>
+<iframe name="myiframe" frameborder="0" width="500"></iframe>
 <script src="js/homework.js"></script>
 <?php
 include ('includes/footer.php');
