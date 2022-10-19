@@ -4,6 +4,7 @@
 	Website	:	http://www.edg3.co.uk/
 */
 * {
+	box-sizing: border-box;
 	border:0;
 	margin:0;
 	padding:0;
