@@ -1,8 +1,9 @@
 ul, #myUL {
   list-style-type: none;
 }
-ul, li {
-  padding-left: 50px !important;
+#tree-folder > ul, li {
+  padding-left: 20px;
+  /* margin-left: 30px; */
 }
 
 /* Remove margins and padding from the parent ul */
@@ -21,16 +22,19 @@ ul, li {
 }
 
 .caret::before {
-  content: "\25B6";
+  font-family: "Font Awesome 5 Free";
+  content: "\f07b";
   color: black;
   display: inline-block;
   margin-right: 6px;
 }
 
 .caret-down::before {
-  -ms-transform: rotate(90deg); /* IE 9 */
-  -webkit-transform: rotate(90deg); /* Safari */
-  transform: rotate(90deg);  
+  font-family: "Font Awesome 5 Free";
+  content: "\f07c";
+  /* -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);   */
 }
 /* Hide the nested list */
 .nested {
