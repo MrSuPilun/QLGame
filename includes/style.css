@@ -11,13 +11,11 @@
 
 /* general */
 a {
-	color:#777;
 	text-decoration:none;
 }
 
 a:hover {
-	color:#333;
-	text-decoration:none;
+	text-decoration: none !important;
 }
 
 /* body */
@@ -27,61 +25,8 @@ body {
 	font:0.8em Arial, Helvetica, "bitstream vera sans", sans-serif;
 }
 
-/* header */
-#header {
-	border-bottom:1px solid #999;
-	height:80px;
-	margin:0 auto;
-	width:751px;
-}
-#header h1 {
-	color:#888;
-	font-size:300%;
-	letter-spacing:-3px;
-	text-align:right;
-	padding:5px;
-	margin-bottom:-20px;
-}
-#header h2 {
-	color:#CCC;
-	font-size:200%;
-	letter-spacing:-2px;
-	text-align:right;
-}
-
-/* navigation */
-#navigation {
-	background:#fafafa;
-	border-right:1px solid #999;
-	margin:0 auto;
-	width:750px;
-	height:40px;
-	list-style:none;
-}
-#navigation li {
-	border-left:1px solid #999;
-	float:left;
-	width:149px;
-	list-style:none;
-}
-#navigation a {
-	color:#555;
-	display:block;
-	line-height:40px;
-	text-align:center;
-}
-#navigation a:hover {
-	background:#e3e3e3;
-	color:#555;
-}
-#navigation .active {
-	background:#e3e3e3;
-	color:#777;
-}
-
 /* content */
 #content {
-	width:751px;
 	min-height: 720px;
 	margin:0 auto;
 	padding:0 0 20px;
@@ -103,7 +48,10 @@ footer {
 	margin:0 auto;
 	padding:5px;
 	text-align:center;
-	width:751px;
+}
+
+footer > div > a > b {
+	vertical-align: middle;
 }
 
 /* Added by Larry Ullman: */
