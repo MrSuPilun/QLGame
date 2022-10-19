@@ -17,11 +17,7 @@ function InThuMuc($data, &$str = "", $path = "")
     }
     $str .= "</li>";
   } else {
-<<<<<<< HEAD
     $str .= "<li><a class='file' target='myiframe' href='$path" . $data['file_name'] . "'>" . $data['name'] . "</a></li>";
-=======
-    $str .= "<li><a href='$path" . $data['file_name'] . "'>" . $data['name'] . "</a></li>";
->>>>>>> 8b063d006d72faad57a6cf1b16f4b25c270b827d
   }
   $str .= "</ul>";
   return $str;
