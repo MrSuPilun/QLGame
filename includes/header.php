@@ -2,20 +2,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title><?php echo $page_title; ?></title>	
-	<link rel="stylesheet" href="includes/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="assets/vendor/bootstrap-4.6.2-dist/css/bootstrap.min.css" type="text/css" media="screen" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 </head>
 <body>
-	<div id="header">
-		<h1>Your Website</h1>
-		<h2>catchy slogan...</h2>
-	</div>
-	<div id="navigation">
-		<ul>
-			<li><a href="index.php">Thông tin nhóm</a></li>
-			<li><a href="pages/register.php">Bài tập</a></li>
-			<li><a href="pages/view_users.php">Webdemo</a></li>
-		</ul>
-	</div>
-	<div id="content"><!-- Start of the page-specific content. -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+	  <a class="navbar-brand" href="#">Nhóm 7</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Thông tin nhóm <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Bài tập</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Web</a>
+	      </li>
+	    </ul>
+	  </div>
+  </div>
+</nav>
+<div id="content"><!-- Start of the page-specific content. -->
 <!-- Script 9.1 - header.html -->

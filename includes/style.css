@@ -81,10 +81,11 @@ body {
 
 /* content */
 #content {
-	height:auto;
+	width:751px;
+	min-height: 720px;
 	margin:0 auto;
 	padding:0 0 20px;
-	width:751px;
+	
 }
 #content h1 {
 	border-bottom:1px dashed #999;
@@ -96,11 +97,11 @@ body {
 }
 
 /* footer */
-#footer {
+footer {
 	border-top:1px solid #999; 
-	height:50px;
+	height:40px;
 	margin:0 auto;
-	padding:10px;
+	padding:5px;
 	text-align:center;
 	width:751px;
 }
