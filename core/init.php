@@ -1,8 +1,13 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
 abstract class DBSQL
 {
   private $connect;
 
+  function __construct($host="", $user="", $pw="", $db="")
+  {
+    $this->setConnect($host, $user, $pw, $db);
+  }
   public function setConnect($host, $user, $pw, $db)
   {
     $conn = new mysqli($host, $user, $pw, $db);
@@ -34,6 +39,5 @@ class QLGame extends DBSQL
 }
 
 $qlgame = new QLGame();
-$qlgame->setConnect("localhost", "root", "", "qlgame");
 
 ?>
