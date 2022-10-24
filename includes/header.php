@@ -32,7 +32,7 @@ function activeClasses($p=0, $i)
 	        <a class="nav-link" href="homework.php">Bài tập</a>
 	      </li>
 	      <li class="nav-item <?php echo activeClasses($p, 2) ?>">
-	        <a class="nav-link" href="#">Web</a>
+	        <a class="nav-link" href="web.php">Web</a>
 	      </li>
 	    </ul>
 	  </div>
