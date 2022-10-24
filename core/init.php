@@ -29,6 +29,11 @@ abstract class DBSQL
     return $this->connect;
   }
 
+  public function isConnect()
+  {
+    return $this->connect->connect_errno;
+  }
+
   function queryDB($str_query = "")
   {
     return mysqli_query($this->connect, $str_query);
