@@ -34,6 +34,9 @@ function activeClasses($p=0, $i)
 	      <li class="nav-item <?php echo activeClasses($p, 2) ?>">
 	        <a class="nav-link" href="web.php">Web</a>
 	      </li>
+				<li class="nav-item <?php echo activeClasses($p, 3) ?>">
+	        <a class="nav-link" href="setup_db.php">Setup</a>
+	      </li>
 	    </ul>
 	  </div>
   <!-- </div> -->
