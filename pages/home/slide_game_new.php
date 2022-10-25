@@ -7,11 +7,11 @@ $result = $qlgame->queryDB("SELECT * FROM GAME ORDER BY MA_GAME DESC LIMIT 5");
 $i = 0;
 while ($row = mysqli_fetch_array($result)) {
   $str_order_list .= "
-    <li data-target='#carouselId' data-slide-to='0' class='" . (($i == 0) ? "active" : "") . "'></li>
+    <li data-target='#carouselId' data-slide-to='$i' class='" . (($i == 0) ? "active" : "") . "'></li>
   ";
 
   $str_carousel .= "
-    <div class='carousel-item " . (($i == 0) ? "active" : "") . "'>
+    <div class='carousel-item" . (($i == 0) ? " active" : "") . "'>
       <div class='mark-slider w-100'>
         <img class='d-block w-100' style='border-radius: 15px;' src='" . $row[4] . "'>
       </div>
@@ -23,7 +23,7 @@ while ($row = mysqli_fetch_array($result)) {
   ";
 
   $str_carousel_thumbnail .= "
-    <li class='slider d-flex flex-row " . (($i == 0) ? "active" : "") . "'>
+    <li href='#carouselId' data-slide-to='$i' class='slider d-flex flex-row" . (($i == 0) ? " active" : "") . "'>
       <div class='thumbnail'><img src='" . $row[4] . "'></div>
       <div class='title-thumbnail'>" . $row[1] . "</div>
     </li>
@@ -31,7 +31,7 @@ while ($row = mysqli_fetch_array($result)) {
   $i++;
 }
 ?>
-<div class="d-flex flex-row">
+<div id="carousel-container" class="d-flex flex-row">
   <div id="carouselId" class="carousel slide w-100" data-ride="carousel">
     <ol class="carousel-indicators">
       <?php echo $str_order_list; ?>
@@ -50,7 +50,7 @@ while ($row = mysqli_fetch_array($result)) {
   </div>
 
   <div id="list-slider">
-    <ul class="d-flex flex-column">
+    <ul class="d-flex flex-column" data-ride="carousel">
       <?php echo $str_carousel_thumbnail; ?>
     </ul>
   </div>
@@ -60,14 +60,28 @@ while ($row = mysqli_fetch_array($result)) {
   const list_slider = document.getElementById("list-slider");
   const sliders = document.getElementsByClassName("slider");
   const carousel = document.getElementById("carouselId");
-  for (let i = 0; i < sliders.length; i++) {
-    sliders[i].addEventListener('click', function() {
-      var current = list_slider.getElementsByClassName("active");
-      if (current.length > 0) {
-        current[0].className = current[0].className.replace(" active", "");
-      }
-      this.className += " active";
-      $('#carouselId').carousel(i);
-    });
+
+  function handleClickThumbnail() {
+    for (let i = 0; i < sliders.length; i++) {
+      sliders[i].addEventListener('click', function() {
+        var current = list_slider.getElementsByClassName("active");
+        if (current.length > 0) {
+          current[0].className = current[0].className.replace(" active", "");
+        }
+        this.className += " active";
+      });
+    }
   }
+
+  handleClickThumbnail();
+
+  $('#carouselId').on('slide.bs.carousel', (e) => {
+    let nfrom = e.from;
+    let nto = e.to;
+    var current = list_slider.getElementsByClassName("active");
+    if (current.length > 0) {
+      current[0].className = current[0].className.replace(" active", "");
+    }
+    sliders[nto].className += " active";
+  });
 </script>
