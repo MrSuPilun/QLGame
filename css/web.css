@@ -10,6 +10,7 @@ body {
 
 #carouselId {
   width: 100%;
+  max-height: 400px;
 }
 
 .mark-slider {
@@ -71,7 +72,10 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 5px;
+  
 }
+
+
 
 .title-thumbnail {
   font-size: 12px;
@@ -94,4 +98,11 @@ body {
 .slider.active {
   background-color: #363636;
   border-radius: 15px;
+  animation-name: animClick;
+  animation-duration: 1s;
+}
+
+@keyframes animClick {
+  50% { transform: scale(1.1);}
+  100% {transform: scale1(1);}
 }
