@@ -108,8 +108,8 @@ body {
 }
 
 /*----------Header---------*/
-.navbar {
-    background-color: black;
+#web-navbar {
+    background-color: #121212;
     height: 100px;
 }
 
@@ -128,4 +128,14 @@ body {
 
 .input-group-prepend .form-control {
     border-radius: 0;
+}
+
+#web-btn-sign-in {
+  width: 85px;
+}
+
+@media (max-width: 992px) {
+  #web-navbar-nav {
+    display: none;
+  }
 }
