@@ -41,5 +41,5 @@ function activeClasses($p=0, $i)
 	  </div>
   <!-- </div> -->
 </nav>
-<div id="content" class="container-fluid"><!-- Start of the page-specific content. -->
+<div id="content"><!-- Start of the page-specific content. -->
 <!-- Script 9.1 - header.html -->

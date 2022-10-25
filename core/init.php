@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ERROR | E_PARSE);
+// error_reporting(E_ERROR | E_PARSE);
 abstract class DBSQL
 {
   private $host;
@@ -27,6 +27,11 @@ abstract class DBSQL
   public function getConnect()
   {
     return $this->connect;
+  }
+
+  public function isConnect()
+  {
+    return $this->connect->connect_errno;
   }
 
   function queryDB($str_query = "")
