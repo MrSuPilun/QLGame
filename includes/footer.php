@@ -12,9 +12,6 @@
 		</a>
 	</div>
 </footer>
-<script src="assets/vendor/bootstrap-4.6.2-dist/js/bootstrap.min.js"></script>
-<script src="assets/vendor/jquery-3.0.0.min.js"></script>
-<script src="assets/vendor/bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
