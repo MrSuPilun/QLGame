@@ -8,6 +8,7 @@ $qlgame->getConnect()->select_db("QLGAME");
 <link rel="stylesheet" href="css/web.css">
 <?php
 include_once ('includes/header.php');
+include_once ('pages/includes/header.php');
 include_once('pages/home/home.php');
 $qlgame->closeDB();
 include_once ('includes/footer.php');
