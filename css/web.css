@@ -6,6 +6,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 75%;
+  color: white;
 }
 
 #carousel-container {
@@ -128,8 +129,8 @@ body {
     border: none;
 }
 
-.input-group-prepend .form-control {
-    border-radius: 0;
+.input-group-prepend > .form-control {
+    border-radius: 0 0.25rem 0.25rem 0;
 }
 
 #web-btn-sign-in {
@@ -202,4 +203,14 @@ body {
 
 .card-icon-add:hover {
   transform: scale(1.3);
+}
+
+/* Result Search */
+#btn-arrow-left {
+  margin-right: 10px;
+  color:white;
+}
+
+#btn-arrow-left:hover i {
+  color: #363636;
 }

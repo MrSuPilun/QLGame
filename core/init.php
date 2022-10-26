@@ -47,6 +47,14 @@ abstract class DBSQL
 
 class QLGame extends DBSQL
 {
+  public function searchDB($fields='*', $table='', $fieldSearch='', $search_value='')
+  {
+    $str = "SELECT $fields FROM $table";
+    if($search_value == "")
+      return $this->queryDB($str);
+    return $this->queryDB("$str WHERE $fieldSearch LIKE '%$search_value%'");
+  }
+
   public function insertNhaPhatTrien($maNPT="", $tenNPT="")
   {
     $str_query = "INSERT INTO `NHA_PHAT_TRIEN`(`MA_NPT`, `TEN_NPT`) VALUES ('$maNPT', '$tenNPT')";
