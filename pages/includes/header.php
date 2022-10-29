@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <div class="menu">
 	<nav id="web-navbar" class="navbar navbar-expand-lg navbar-dark">
 		<a class="navbar-brand" href="#">
@@ -37,5 +36,3 @@
 		</form>
 	</nav>
 </div>
-
-<p style="width: fit-content;"></p>
