@@ -30,13 +30,13 @@
 					echo "<button id='web-btn-sign-in' class='btn btn-dark my-2 my-sm-0' type='submit' style='font-size: 10px; width:120px;'>
 							<a href='#' style='color:white;'>
 								<i class='fa-solid fa-user' style='padding-right:15px;'></i>".$_SESSION['TEN_DN']."</a>".
-							"<a href='/my_web/QLGame/pages/signIn/log_out.php' style='color:white;'>/Log out</a>"
+							"<a href='pages/signIn/log_out.php' style='color:white;'>/Log out</a>"
 						."</button>";
 				}
 				else
 				{
 					echo "<button id='web-btn-sign-in' class='btn btn-dark my-2 my-sm-0' type='submit' style='font-size: 10px;'>
-							<a href='/my_web/QLGame/pages/signIn/sign_in.php' style='color:white;'>
+							<a href='pages/signIn/sign_in.php' style='color:white;'>
 								<i class='fa-solid fa-user' style='padding-right:15px;'></i>SIGN IN
 							</a>
 						</button>";

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/my_web/QLGame/css/web.css">
+<link rel="stylesheet" href="css/web.css">
 <?php
  
     if (!isset($_POST['hoTen'])){
