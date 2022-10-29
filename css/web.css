@@ -214,3 +214,42 @@ body {
 #btn-arrow-left:hover i {
   color: #363636;
 }
+
+/*------Sign In------*/
+#tenDN, #matKhau, #info {
+  width: 350px;
+  height: 60px;
+  border: 1px solid gainsboro;
+  font: 18px inherit;
+}
+
+#account {
+  width: 220px;
+  height: 60px;
+  border: 1px solid gainsboro;
+  font: 18px inherit;
+}
+
+::placeholder {
+  color: wheat;
+  font-size: 16px;
+}
+
+#dangNhap, #dangKy {
+  width: 350px;
+  height: 60px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.notify {
+  margin-top: 20%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+.notify > a {
+  color: white;
+  font-weight: bold;
+}
