@@ -29,8 +29,8 @@ function HienThiBaiTap($store)
 {
   $arr_dir = scandir($store);
   $arr_dir = array_values(array_diff($arr_dir, array('.', '..')));
-  echo "<ul id='tree-folder'>";
   foreach ($arr_dir as $value) {
+    echo "<ul id='tree-folder'>";
     $str = "";
     $path = "./$store/$value/path.json";
     $json = file_get_contents($path);

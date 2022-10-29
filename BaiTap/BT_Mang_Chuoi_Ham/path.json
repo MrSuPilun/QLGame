@@ -43,16 +43,6 @@
             "file_name": "Bai_9_ThietKeFormDemPhanTu.php"
           }
         ]
-      },
-      {
-        "name": "Hướng đối tượng",
-        "folder": "OOP",
-        "paths": [
-          {
-            "name": "Bài 1: Tạo các lớp cơ bản",
-            "file_name": "Bai1_TaoCacLopCoBan.php"
-          }
-        ]
       }
     ]
   }
