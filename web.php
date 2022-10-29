@@ -6,6 +6,7 @@ $qlgame->connectDB();
 $qlgame->getConnect()->select_db("QLGAME");
 ?>
 <link rel="stylesheet" href="css/web.css">
+<link rel="stylesheet" href="assets/vendor/bootstrap-4.6.2-dist/css/bootstrap.min.css">
 <?php
 
 session_start();
