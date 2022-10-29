@@ -1,45 +1,5 @@
 
 
-
-<link rel="stylesheet" href="css/web.css">
-<link rel="stylesheet" href="assets/vendor/fontawesome-free-6.2.0-web/css/all.min.css">
-<link rel="stylesheet" href="assets/vendor/bootstrap-4.6.2-dist/css/bootstrap.min.css" type="text/css" media="screen" />
-<?php
-$page_title = 'Sign In';
-
-session_start();
- 
-header('Content-Type: text/html; charset=UTF-8');
-$conn = mysqli_connect('localhost', 'root', '', 'qlgame');
-mysqli_set_charset($conn, 'UTF8');
-
-if (isset($_POST['dangNhap'])) 
-{
-    $tenDN = addslashes($_POST['tenDN']);
-    $matKhau = addslashes($_POST['matKhau']);
-     
-    if (!$tenDN || !$matKhau) {
-        echo "<div class='notify'>Please enter full sign in name and password. <a href='javascript: history.go(-1)'>Return</a></div>";
-        exit;
-    }
-     
-    $query = mysqli_query($conn,"SELECT TEN_DN, MAT_KHAU FROM user WHERE TEN_DN='$tenDN'");
-    if (mysqli_num_rows($query) == 0) {
-        echo "<div class='notify'>Sign in name not exist. Please check again. <a href='javascript: history.go(-1)'>Return</a></div>";
-        exit;
-    }
-     
-    $row = mysqli_fetch_array($query);
-    if ($matKhau != $row['MAT_KHAU']) {
-        echo "<div class='notify'>Password incorrect. Please re-enter. <a href='javascript: history.go(-1)'>Return</a></div>";
-        exit;
-    }
-     
-    $_SESSION['TEN_DN'] = $tenDN;
-    echo "<div class='notify'>Login successful. <a href='web.php'>Homepage</a></div>";
-    die();
-}
-?>
 <div id="layoutAuthentication">
     <div id="layoutAuthentication_content">
         <main>
@@ -54,7 +14,7 @@ if (isset($_POST['dangNhap']))
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form align='center' action='sign_in.php?do=login' method='POST'>
+                                <form align='center' method='POST'>
                                     <div class="form-floating mb-3">
                                         
                                         <div class="form-outline mb-4">

@@ -134,7 +134,8 @@ body {
 }
 
 #web-btn-sign-in {
-  width: 85px;
+  white-space: nowrap;
+  text-align: center;
 }
 
 @media (max-width: 992px) {

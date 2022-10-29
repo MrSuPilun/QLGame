@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <div class="menu">
 	<nav id="web-navbar" class="navbar navbar-expand-lg navbar-dark">
 		<a class="navbar-brand" href="#">
@@ -23,25 +22,29 @@
 				<a class="nav-link" href="#">News</a>
 			</li>
 		</ul>
-		<form class="form-inline my-2 my-lg-0">		
+		<form class="form-inline my-2 my-lg-0" method="POST">		
 			<?php
-				if(isset($_SESSION['TEN_DN']) && $_SESSION['TEN_DN'])
+				if(isset($_SESSION['TEN_DN']) && $_SESSION['TEN_DN'] != "")
 				{
-					echo "<button id='web-btn-sign-in' class='btn btn-dark my-2 my-sm-0' type='submit' style='font-size: 10px; width:120px;'>
-							<a href='#' style='color:white;'>
-								<i class='fa-solid fa-user' style='padding-right:15px;'></i>".$_SESSION['TEN_DN']."</a>".
-							"<a href='pages/signIn/log_out.php' style='color:white;'>/Log out</a>"
-						."</button>";
+					echo "<button name='logout' id='web-btn-sign-in' class='btn btn-dark my-2 my-sm-0' type='submit' style='font-size: 10px;'><i class='fa-solid fa-user' style='padding-right:15px;'></i>". $_SESSION['TEN_DN'] ." Logout</button>";
+					// echo "<button name='logout' id='web-btn-sign-in' class='btn btn-dark my-2 my-sm-0' type='submit' style='font-size: 10px; width: fit-content;'>
+					// 		<a href='#' style='color:white;'>
+					// 			<i class='fa-solid fa-user' style='padding-right:15px;'></i>". $_SESSION['TEN_DN'] ."</a>"
+					// 			. "<span>Logout</span>"
+					// 	. "</button>";
 				}
 				else
 				{
-					echo "<button id='web-btn-sign-in' class='btn btn-dark my-2 my-sm-0' type='submit' style='font-size: 10px;'>
-							<a href='pages/signIn/sign_in.php' style='color:white;'>
-								<i class='fa-solid fa-user' style='padding-right:15px;'></i>SIGN IN
-							</a>
-						</button>";
+					echo "<button name='login' id='web-btn-sign-in' class='btn btn-dark my-2 my-sm-0' type='submit' style='font-size: 10px;'><i class='fa-solid fa-user' style='padding-right:15px;'></i>SIGN IN</button>";
+					// echo "<button name='login' id='web-btn-sign-in' class='btn btn-dark my-2 my-sm-0' type='submit' style='font-size: 10px; width: fit-content;'>
+					// 		<p style='color:white;'>
+					// 			<i class='fa-solid fa-user' style='padding-right:15px;'></i>SIGN IN
+					// 		</p>
+					// 	</button>";
 				}
 			?>
 		</form>
 	</nav>
 </div>
+
+<p style="width: fit-content;"></p>
