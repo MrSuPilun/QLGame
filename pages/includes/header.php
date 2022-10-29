@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <div class="menu">
 	<nav id="web-navbar" class="navbar navbar-expand-lg navbar-dark">
 		<a class="navbar-brand" href="#">
@@ -22,8 +23,19 @@
 				<a class="nav-link" href="#">News</a>
 			</li>
 		</ul>
-		<form class="form-inline my-2 my-lg-0">
-			<button id="web-btn-sign-in" class="btn btn-dark my-2 my-sm-0" type="submit" style="font-size: 10px;"><i class="fa-solid fa-user" style="padding-right:15px;"></i>SIGN IN</button>
+		<form class="form-inline my-2 my-lg-0" method="POST">		
+			<?php
+				if(isset($_SESSION['TEN_DN']) && $_SESSION['TEN_DN'] != "")
+				{
+					echo "<button name='logout' id='web-btn-sign-in' class='btn btn-dark my-2 my-sm-0' type='submit' style='font-size: 10px;'><i class='fa-solid fa-user' style='padding-right:15px;'></i>". $_SESSION['TEN_DN'] ." Logout</button>";
+				}
+				else
+				{
+					echo "<button name='login' id='web-btn-sign-in' class='btn btn-dark my-2 my-sm-0' type='submit' style='font-size: 10px;'><i class='fa-solid fa-user' style='padding-right:15px;'></i>SIGN IN</button>";
+				}
+			?>
 		</form>
 	</nav>
 </div>
+
+<p style="width: fit-content;"></p>
