@@ -1,0 +1,66 @@
+{
+  "name": "Phạm Ngọc Ẩn",
+  "folder": "PhamNgocAn",
+  "paths": [
+    {
+      "name": "Mảng",
+      "folder": "Mang",
+      "paths": [
+        {
+          "name": "Bài tập 1 - Một số thao tác trên mảng số nguyên",
+          "file_name": "Bai1_MotsoThaoTacTrenMangSoNguyen.php"
+        },
+        {
+          "name": "Bài tập 2 - Thiết kế Form tìm năm nhuận",
+          "file_name": "Bai2_ThietKeFormTimNamNhuan.php"
+        },
+        {
+          "name": "Bài tập 3 - Thiết kế Form tìm năm âm lịch",
+          "file_name": "Bai3_ThietKeFormTinhNamAmLich.php"
+        },
+        {
+          "name": "Bài tập 4 - Thiết kế Form nhập và tính trên dãy số x",
+          "file_name": "Bai4_ThietKeFormNhapVaTinhTrenDaySo.php"
+        },
+        {
+          "name": "Bài tập 5 - Thiết kế Form Phát sinh mảng và tính toán",
+          "file_name": "Bai5_ThietKeFormPhatSinhMangVaTinhToan.php"
+        },
+        {
+          "name": "Bài tập 6 - Thiết kế Form Tìm kiếm",
+          "file_name": "Bai6_ThietKeFormTimKiem.php"
+        },
+        {
+          "name": "Bài tập 7 - Thiết kế Form Thay thế",
+          "file_name": "Bai7_ThietKeFormThayThe.php"
+        },
+        {
+          "name": "Bài tập 8 - Thiết kế Form Sắp xếp mảng",
+          "file_name": "Bai8_ThietKeFormSapXepMang.php"
+        },
+        {
+          "name": "Bài tập 9 - Thiết kế Form Đếm phần tử, ghép mảng và sắp xếp",
+          "file_name": "Bai9_ThietKeFormDemGhepSapXepPhanTu.php"
+        },
+        {
+          "name": "Bài tập 10 - Tạo form xếp hạng bài hát",
+          "file_name": "Bai10_TaoFormXepHangBaiHat_Session.php"
+        }
+      ]
+    },
+    {
+      "name": "Hướng đối tượng",
+      "folder": "OOP",
+      "paths": [
+        {
+          "name": "Bài 1 - Tạo các lớp đơn giản",
+          "file_name": "Bai1_TaoCacLopCoBan.php"
+        },
+        {
+          "name": "Bài 2 - Quản lý thông tin nhân viên",
+          "file_name": "Bai2_QLThongTinNhanVien.php"
+        }
+      ]
+    }
+  ]
+}
