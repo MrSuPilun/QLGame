@@ -1,0 +1,58 @@
+{
+    "name": "Nguyễn Hoàng Minh Phúc",
+    "folder": "BT_Mang_Chuoi_Ham",
+    "paths": [
+      {
+        "name": "Mảng",
+        "folder": "Mang",
+        "paths": [
+          {
+            "name": "Bài tập 1 - Một số thao tác trên mảng số nguyên",
+            "file_name": "Bai_1_MotSoThaoTacMangSoNguyen.php"
+          },
+          {
+            "name": "Bài tập 2 - Thiết kế Form tìm năm nhuận",
+            "file_name": "Bai_2_ThietKeFormTimNamNhuan.php"
+          },
+          {
+            "name": "Bài tập 3 - Thiết kế Form tìm năm âm lịch",
+            "file_name": "Bai_3_ThietKeFormTimNamAmLich.php"
+          },
+          {
+            "name": "Bài tập 4 - Thiết kế Form nhập và tính trên dãy số",
+            "file_name": "Bai_4_ThietKeFormNhapVaTinhTrenDaySo.php"
+          },
+          {
+            "name": "Bài tập 5 - Thiết kế Form Phát sinh mảng và tính toán",
+            "file_name": "Bai_5_ThietKeFormPhatSinhMangVaTinhToan.php"
+          },
+          {
+            "name": "Bài tập 6 - Thiết kế Form Tìm kiếm",
+            "file_name": "Bai_6_ThietKeFormTimKiem.php"
+          },
+          {
+            "name": "Bài tập 7 - Thiết kế Form Thay thế",
+            "file_name": "Bai_7_ThietKeFormThayThe.php"
+          },
+          {
+            "name": "Bài tập 8 - Thiết kế Form Sắp xếp mảng",
+            "file_name": "Bai_8_ThietKeFormSapXep.php"
+          },
+          {
+            "name": "Bài tập 9 - Thiết kế Form Đếm phần tử, ghép mảng và sắp xếp",
+            "file_name": "Bai_9_ThietKeFormDemPhanTu.php"
+          }
+        ]
+      },
+      {
+        "name": "Hướng đối tượng",
+        "folder": "OOP",
+        "paths": [
+          {
+            "name": "Bài 1: Tạo các lớp cơ bản",
+            "file_name": "Bai1_TaoCacLopCoBan.php"
+          }
+        ]
+      }
+    ]
+  }
