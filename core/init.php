@@ -80,6 +80,15 @@ class QLGame extends DBSQL
     $str_query = "INSERT INTO `CTHD`(`MA_HD`, `MA_GAME`, `GIA`, `SO_LUONG`) VALUES ('$maHD', '$maGame', '$gia', '$soLuong')";
     return $this->queryDB($str_query);
   }
+
+  public function layMaUser()
+  {
+    $lastRow = $this->queryDB("SELECT MA_USER FROM USER ORDER BY MA_USER DESC LIMIT 1");
+    $last =  implode(mysqli_fetch_array($lastRow));
+    $maMax = substr($last, 2, 3);
+    $maUS = (int)$maMax + 1;
+    return "US0" . $maUS;
+  }
 }
 
 $qlgame = new QLGame("localhost", "root");
