@@ -61,7 +61,7 @@ ul {
   position: sticky;
   top: 4rem;
   z-index: 1000;
-  height: calc(100vh);
+  height: 100vh;
   padding: 30px 10px;
   border-right: 1px solid rgba(0,0,0,0.1);
 }

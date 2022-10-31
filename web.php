@@ -42,10 +42,15 @@ if (isset($_POST['dangNhap'])) {
 if (isset($_POST['login'])) {
   include_once('pages/signIn/sign_in.php');
 } else if (isset($_POST['logout'])) {
-  include_once('pages/signIn/log_out.php');
-} else if (isset($_PORT['admin'])) {
-  echo "<link rel='stylesheet' href='css/admin.css>'";
-  echo "<iframe src='admin.php'></iframe>";
+  // include_once('pages/signIn/log_out.php');
+  if (isset($_SESSION['TEN_DN'])) {
+    unset($_SESSION['TEN_DN']);
+    unset($_SESSION['PHAN_QUYEN']);
+  }
+  include_once('pages/home/home.php');
+} else if (isset($_POST['admin'])) {
+  echo "<link rel='stylesheet' href='css/admin.css'>";
+  echo "<iframe src='./admin.php'></iframe>";
 } else {
   include_once('pages/home/home.php');
 }
