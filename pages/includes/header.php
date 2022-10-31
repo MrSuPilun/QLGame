@@ -22,17 +22,20 @@
 				<a class="nav-link" href="#">News</a>
 			</li>
 		</ul>
-		<form class="form-inline my-2 my-lg-0" method="POST">		
-			<?php
-				if(isset($_SESSION['TEN_DN']) && $_SESSION['TEN_DN'] != "")
-				{
-					echo "<button name='logout' id='web-btn-sign-in' class='btn btn-dark my-2 my-sm-0' type='submit' style='font-size: 10px;'><i class='fa-solid fa-user' style='padding-right:15px;'></i>". $_SESSION['TEN_DN'] ." Logout</button>";
+		<form class="form-inline my-2 my-lg-0" method="POST">
+			<ul class="nav-user">
+				<?php
+				if (isset($_SESSION['PHAN_QUYEN']) && $_SESSION['PHAN_QUYEN'] == "2") {
+					echo "<li><button name='admin' id='web-btn-sign-in' class='btn btn-dark my-2 my-sm-0' type='submit' style='font-size: 10px;'><i class='fa-solid fa-user' style='padding-right:15px;'></i>Admin</button></li>";
 				}
-				else
-				{
-					echo "<button name='login' id='web-btn-sign-in' class='btn btn-dark my-2 my-sm-0' type='submit' style='font-size: 10px;'><i class='fa-solid fa-user' style='padding-right:15px;'></i>SIGN IN</button>";
+
+				if (isset($_SESSION['TEN_DN']) && $_SESSION['TEN_DN'] != "") {
+					echo "<li><button name='logout' id='web-btn-sign-in' class='btn btn-dark my-2 my-sm-0' type='submit' style='font-size: 10px;'><i class='fa-solid fa-user' style='padding-right:15px;'></i>" . $_SESSION['TEN_DN'] . " Logout</button></li>";
+				} else {
+					echo "<li><button name='login' id='web-btn-sign-in' class='btn btn-dark my-2 my-sm-0' type='submit' style='font-size: 10px;'><i class='fa-solid fa-user' style='padding-right:15px;'></i>SIGN IN</button></li>";
 				}
-			?>
+				?>
+			</ul>
 		</form>
 	</nav>
 </div>
