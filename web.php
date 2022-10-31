@@ -24,19 +24,19 @@ if (isset($_POST['dangNhap'])) {
   $matKhau = addslashes($_POST['matKhau']);
 
   if (!$tenDN || !$matKhau) {
-    echo "<div class='notify'>Please enter full sign in name and password. <a href='javascript: history.go(-1)'>Return</a></div>";
+    notifyView("Please enter full sign in name and password.");
     exit;
   }
 
   $query = $qlgame->queryDB("SELECT TEN_DN, MAT_KHAU, PHAN_QUYEN FROM user WHERE TEN_DN='$tenDN'");
   if (mysqli_num_rows($query) == 0) {
-    echo "<div class='notify'>Sign in name not exist. Please check again. <a href='javascript: history.go(-1)'>Return</a></div>";
+    notifyView("Sign in name not exist. Please check again.");
     exit;
   }
 
   $row = mysqli_fetch_array($query);
   if ($matKhau != $row['MAT_KHAU']) {
-    echo "<div class='notify'>Password incorrect. Please re-enter. <a href='javascript: history.go(-1)'>Return</a></div>";
+    notifyView("Password incorrect. Please re-enter.");
     exit;
   }
 
