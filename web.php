@@ -28,7 +28,7 @@ if (isset($_POST['dangNhap'])) {
     exit;
   }
 
-  $query = $qlgame->queryDB("SELECT TEN_DN, MAT_KHAU, PHAN_QUYEN FROM user WHERE TEN_DN='$tenDN'");
+  $query = $qlgame->queryDB("SELECT TEN_DN, MAT_KHAU, EMAIL, PHAN_QUYEN FROM user WHERE TEN_DN='$tenDN'");
   if (mysqli_num_rows($query) == 0) {
     notifyView("Sign in name not exist. Please check again.");
     exit;
@@ -41,6 +41,7 @@ if (isset($_POST['dangNhap'])) {
   }
 
   $_SESSION['TEN_DN'] = $tenDN;
+  $_SESSION['EMAIL'] = $row['EMAIL'];
   $_SESSION['PHAN_QUYEN'] = $row['PHAN_QUYEN'];
 }
 
