@@ -1,0 +1,7 @@
+.admin-btn-edit, .admin-btn-delete {
+  padding: 7px;
+}
+
+.btn-simple-danger {
+  color: #f25961 !important;
+}
