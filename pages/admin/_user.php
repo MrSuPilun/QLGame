@@ -42,7 +42,7 @@ if ($result) {
       }
       $str .= "<td>
         <div class='form-button-action'>
-          <a href='" . $_SERVER['PHP_SELF'] . "?idUpdate=$id&page=". $_GET['page'] ."'>
+          <a href='" . $_SERVER['PHP_SELF'] . "?id=$id&page=". $_GET['page'] ."'>
             <button type='button' data-toggle='tooltip' class='admin-btn-edit btn btn-link btn-simple-primary btn-lg' data-original-title='Edit Task'>
               <i class='fa fa-edit'></i>
             </button>
