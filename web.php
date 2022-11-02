@@ -11,11 +11,11 @@ $qlgame->getConnect()->select_db("QLGAME");
 session_start();
 
 include_once('includes/header.php');
-function notifyView($notify = "")
+function notifyView($notify = "", $formName = "")
 {
   echo "<div class='notify'> " .
     "<form method='POST'>" .
-    "<div class='small' style='color:white;'>$notify <button name='register' style='color:white;font-weight:bold;background-color: transparent;'>Return</button></div>" .
+    "<div class='small' style='color:white;'>$notify <button name='$formName' style='color:white;font-weight:bold;background-color: transparent;'>Return</button></div>" .
     "</form></div>";
 }
 
@@ -23,26 +23,16 @@ if (isset($_POST['dangNhap'])) {
   $tenDN = addslashes($_POST['tenDN']);
   $matKhau = addslashes($_POST['matKhau']);
 
-  if (!$tenDN || !$matKhau) {
-    notifyView("Please enter full sign in name and password.");
+  $result = $qlgame->dangNhapUser($tenDN, $matKhau);
+
+  if (!is_string($result)) {
+    $_SESSION['TEN_DN'] = $tenDN;
+    $_SESSION['EMAIL'] = $result['EMAIL'];
+    $_SESSION['PHAN_QUYEN'] = $result['PHAN_QUYEN'];
+  } else {
+    notifyView($result, "login");
     exit;
   }
-
-  $query = $qlgame->queryDB("SELECT TEN_DN, MAT_KHAU, EMAIL, PHAN_QUYEN FROM user WHERE TEN_DN='$tenDN'");
-  if (mysqli_num_rows($query) == 0) {
-    notifyView("Sign in name not exist. Please check again.");
-    exit;
-  }
-
-  $row = mysqli_fetch_array($query);
-  if ($matKhau != $row['MAT_KHAU']) {
-    notifyView("Password incorrect. Please re-enter.");
-    exit;
-  }
-
-  $_SESSION['TEN_DN'] = $tenDN;
-  $_SESSION['EMAIL'] = $row['EMAIL'];
-  $_SESSION['PHAN_QUYEN'] = $row['PHAN_QUYEN'];
 }
 
 if (isset($_POST['dangKy'])) {
@@ -59,44 +49,13 @@ if (isset($_POST['dangKy'])) {
   $diaChi = addslashes($_POST['diaChi']);
   $pQuyen = 0;
 
-  if (!$tenDN || !$matKhau || !$hoTen || !$sdt || !$sdt || !$diaChi) {
-    notifyView("Please enter full information.");
-    exit;
-  }
-
-  if (mysqli_num_rows($qlgame->queryDB("SELECT TEN_DN FROM USER WHERE TEN_DN='$tenDN'")) > 0) {
-    notifyView("Sign In name already exist. Please enter another Sign In name.");
-    exit;
-  }
-
-  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    notifyView("Email incorrect. Please enter another Email.");
-    exit;
-  }
-
-  if (!preg_match("/^\\+?[0-9][0-9]{7,12}$/", $sdt)) {
-    notifyView("Phone number incorrect. Please enter another phone number.");
-    exit;
-  }
-
-  if (mysqli_num_rows($qlgame->queryDB("SELECT EMAIL FROM USER WHERE EMAIL='$email'")) > 0) {
-    notifyView("Email already exist. Please enter another Email. ");
-    exit;
-  }
-
-  if ($matKhau != $xNMK) {
-    notifyView("Re-type password incorrect.");
-    exit;
-  }
-
-  $maUS = $qlgame->LayMaUser();
-  @$addUser = $qlgame->insertUser($maUS, $hoTen, $sdt, $email, $diaChi, $tenDN, $matKhau, $pQuyen);
-
-  if ($addUser) {
+  $result = $qlgame->dangKyUser($hoTen, $sdt, $email, $diaChi, $tenDN, $matKhau, $xNMK, $pQuyen);
+  if ($result == "Success") {
     $_SESSION['TEN_DN'] = $tenDN;
     include_once('pages/home/home.php');
   } else {
-    notifyView("Don't have an account?");
+    notifyView($result, "register");
+    exit;
   }
 }
 
