@@ -4,9 +4,20 @@ if (isset($_GET['id'])) {
 } else {
 	$id = "";
 }
+$tenUser = "";
+$sdt = "";
+$email = "";
+$diaChi = "";
+$result = $qlgame->queryDB("SELECT * FROM USER WHERE MA_USER like '$id'");
+if($result) {
+	$row = mysqli_fetch_array($result);
+	$tenUser = $row['TEN_USER'];
+	$sdt = $row['SDT'];
+	$email = $row['EMAIL'];
+	$diaChi = $row['DIA_CHI'];
+}
 ?>
 
-<!-- Modal -->
 <style>
 	.modal.show {
 		background-color: rgba(0, 0, 0, 0.5);
@@ -29,25 +40,24 @@ if (isset($_GET['id'])) {
 				<div class="modal-body">
 					<div class="form-group">
 						<label>Full Name</label>
-						<input type="text" class="form-control" value="">
+						<input type="text" class="form-control" value="<?= $tenUser ?>">
 					</div>
 					<div class="form-group">
 						<label>Phone Number</label>
-						<input type="text" class="form-control" value="">
+						<input type="text" class="form-control" value="<?= $sdt ?>">
 					</div>
 					<div class="form-group">
 						<label for="exampleInputEmail1">Email address</label>
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="">
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $email ?>">
 					</div>
 					<div class="form-group">
 						<label>Address</label>
-						<input type="text" class="form-control" value="">
+						<input type="text" class="form-control" value="<?= $diaChi ?>">
 					</div>
-					<button name="updateUser" type="submit" class="btn btn-primary">Submit</button>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary modal-btn-close">Close</button>
-					<button type="submit" name="update" class="btn btn-primary">Save changes</button>
+					<button type="submit" name="updateUser" class="btn btn-primary">Save changes</button>
 				</div>
 			</div>
 		</div>

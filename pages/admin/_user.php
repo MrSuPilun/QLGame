@@ -105,10 +105,10 @@ if (isset($_GET['id'])) {
     for ($i = 1; $i <= $maxPage; $i++) //tạo link tương ứng tới các trang
     {
       if ($i == $_GET['page'])
-        echo "<li class='page-item active'><a class='page-link'>Trang" . $i . "</a></li>"; //trang hiện tại sẽ được bôi đậm
+        echo "<li class='page-item active'><a class='page-link'>Page" . $i . "</a></li>"; //trang hiện tại sẽ được bôi đậm
       else
         echo "<li class='page-item'><a class='page-link' href="
-          . $_SERVER['PHP_SELF'] . "?page=" . $i . ">Trang" . $i . "</a></li>";
+          . $_SERVER['PHP_SELF'] . "?page=" . $i . ">Page" . $i . "</a></li>";
     }
     //gắn thêm nút Next
     if ($_GET['page'] < $maxPage) {
