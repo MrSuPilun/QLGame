@@ -15,10 +15,15 @@ if ($result) {
     $stt = ($_GET['page'] - 1) * $rowsPerPage;
     $stt++;
     while ($rows = mysqli_fetch_array($result)) {
+      $id='';
       $str .= "<tr>";
       $str .= "<td><b>$stt</b></td>";
       for ($i = 0; $i < mysqli_num_fields($result); $i++) {
         switch ($i) {
+          case 0:
+            $str .= "<td>" . $rows[$i] . "</td>";
+            $id = $rows[$i];
+            break;
           case 7:
             if ($rows[$i] == 2) {
               $str .= "<td><b style='color: #f25961;'>Admin</b></td>";
@@ -34,22 +39,26 @@ if ($result) {
         }
       }
       $str .= "<td>
-        <div class='form-button-action'>
-          <button type='button' data-toggle='tooltip' title='' class='admin-btn-edit btn btn-link btn-simple-primary btn-lg' data-original-title='Edit Task'>
-            <i class='fa fa-edit'></i>
-          </button>
-          <button type='button' data-toggle='tooltip' title='' class='admin-btn-delete btn btn-link btn-simple-danger' data-original-title='Remove'>
-            <i class='fa fa-times'></i>
-          </button>
-        </div>
+          <div class='form-button-action'>
+            <a href='".$_SERVER['PHP_SELF']."?id=$id' data-toggle='modal' data-target='#exampleModal'>
+              <i class='fa fa-edit'></i>
+            </a>
+            <button name='delete' type='submit' data-toggle='tooltip' title='' class='admin-btn-delete btn btn-link btn-simple-danger' data-original-title='Remove'>
+              <i class='fa fa-times'></i>
+            </button>
+          </div>
       </td>";
       $str .= "</tr>";
       $stt++;
     }
   }
 }
+include_once("pages/admin/_user_update.php");
+echo $_GET['id'];
 ?>
-
+<form method='POST'>
+  <button name='add' type=submit class="btn btn-primary">Add User</button>
+</form>
 <table class="table table-bordered table-head-bg-info table-bordered-bd-info">
   <thead>
     <tr>
