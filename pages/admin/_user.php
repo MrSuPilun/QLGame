@@ -3,7 +3,7 @@
 
 $str = "";
 // ----------------------------------------- Khoi tao cac bien phan trang
-$rowsPerPage = 5;
+$rowsPerPage = 7;
 if (!isset($_GET['page']))
   $_GET['page'] = 1;
 $offset = ($_GET['page'] - 1) * $rowsPerPage;
@@ -14,6 +14,7 @@ if ($result) {
   if (mysqli_num_rows($result) != 0) {
     $stt = ($_GET['page'] - 1) * $rowsPerPage;
     $stt++;
+    $id = '';
     while ($rows = mysqli_fetch_array($result)) {
       $id='';
       $str .= "<tr>";
@@ -39,22 +40,27 @@ if ($result) {
         }
       }
       $str .= "<td>
-          <div class='form-button-action'>
-            <a href='".$_SERVER['PHP_SELF']."?id=$id' data-toggle='modal' data-target='#exampleModal'>
+        <div class='form-button-action'>
+          <a href='" . $_SERVER['PHP_SELF'] . "?id=$id&page=". $_GET['page'] ."'>
+            <button type='button' data-toggle='tooltip' class='admin-btn-edit btn btn-link btn-simple-primary btn-lg' data-original-title='Edit Task'>
               <i class='fa fa-edit'></i>
-            </a>
-            <button name='delete' type='submit' data-toggle='tooltip' title='' class='admin-btn-delete btn btn-link btn-simple-danger' data-original-title='Remove'>
-              <i class='fa fa-times'></i>
             </button>
-          </div>
+          </a>
+          <button type='button' data-toggle='tooltip' title='' class='admin-btn-delete btn btn-link btn-simple-danger' data-original-title='Remove'>
+            <i class='fa fa-times'></i>
+          </button>
+        </div>
       </td>";
       $str .= "</tr>";
       $stt++;
     }
   }
 }
-include_once("pages/admin/_user_update.php");
-echo $_GET['id'];
+
+if (isset($_GET['id'])) {
+  include_once('pages/admin/_user_update.php');
+}
+
 ?>
 <form method='POST'>
   <button name='add' type=submit class="btn btn-primary">Add User</button>

@@ -1,18 +1,32 @@
 <?php
-	echo $_GET['id'];
+if (isset($_GET['id'])) {
+	$id = $_GET['id'];
+} else {
+	$id = "";
+}
 ?>
+
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<form>
+<style>
+	.modal.show {
+		background-color: rgba(0, 0, 0, 0.5);
+		display: block;
+		padding-right: 17px;
+	}
+</style>
+
+<!-- Modal -->
+<form>
+	<div class="modal show" id="exampleModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="close modal-btn-close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
 					<div class="form-group">
 						<label>Full Name</label>
 						<input type="text" class="form-control" value="">
@@ -30,12 +44,22 @@
 						<input type="text" class="form-control" value="">
 					</div>
 					<button name="updateUser" type="submit" class="btn btn-primary">Submit</button>
-				</form>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary modal-btn-close">Close</button>
+					<button type="submit" name="update" class="btn btn-primary">Save changes</button>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</form>
+
+<script>
+	const modal = document.getElementById("exampleModal");
+	const closes = document.getElementsByClassName("modal-btn-close");
+	for (let i = 0; i < closes.length; i++) {
+		closes[i].addEventListener('click', function() {
+			modal.className = modal.className.replace(" show", "");
+		});
+	}
+</script>
