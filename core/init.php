@@ -89,8 +89,63 @@ class QLGame extends DBSQL
     $maUS = (int)$maMax + 1;
     return "US0" . $maUS;
   }
+
+  public function dangNhapUser($tenDN, $matKhau)
+  {
+    if (!$tenDN || !$matKhau) {
+      return "Please enter full sign in name and password.";
+    }
+  
+    $query = $this->queryDB("SELECT TEN_DN, MAT_KHAU, EMAIL, PHAN_QUYEN FROM user WHERE TEN_DN='$tenDN'");
+    if (mysqli_num_rows($query) == 0) {
+      return "Sign in name not exist. Please check again.";
+    }
+  
+    $row = mysqli_fetch_array($query);
+    if ($matKhau != $row['MAT_KHAU']) {
+      return "Password incorrect. Please re-enter.";
+    }
+
+    return $row;
+  }
+
+  public function dangKyUser($tenUser="",$sdt="",$email="",$diaChi="",$tenDN="",$matKhau="", $xNMK="",$phanQuyen="")
+  {
+    if (!$tenDN || !$matKhau || !$tenUser || !$sdt || !$sdt || !$diaChi) {
+      return "Please enter full information.";
+    }
+  
+    if (mysqli_num_rows($this->queryDB("SELECT TEN_DN FROM USER WHERE TEN_DN='$tenDN'")) > 0) {
+      return "Sign In name already exist. Please enter another Sign In name.";
+    }
+  
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      return "Email incorrect. Please enter another Email.";
+    }
+  
+    if (!preg_match("/^\\+?[0-9][0-9]{7,12}$/", $sdt)) {
+      return "Phone number incorrect. Please enter another phone number.";
+    }
+  
+    if (mysqli_num_rows($this->queryDB("SELECT EMAIL FROM USER WHERE EMAIL='$email'")) > 0) {
+      return "Email already exist. Please enter another Email. ";
+    }
+  
+    if ($matKhau != $xNMK) {
+      return "Re-type password incorrect.";
+    }
+  
+    $maUS = $this->LayMaUser();
+    @$addUser = $this->insertUser($maUS, $tenUser, $sdt, $email, $diaChi, $tenDN, $matKhau, $phanQuyen);
+  
+    if ($addUser) {
+      return "Success";
+    } else {
+      return "Don't have an account?";
+    }
+  }
 }
 
-$qlgame = new QLGame("localhost", "root");
+$qlgame = new QLGame("localhost", "root", "", "qlgame");
 
 ?>
