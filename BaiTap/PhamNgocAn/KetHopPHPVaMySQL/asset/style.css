@@ -1,0 +1,24 @@
+.fa-solid.fa-mars {
+  color: #3288BD;
+}
+
+.fa-solid.fa-venus {
+  color: #EA4B38;
+}
+
+.action > a{
+  margin-right: 20px;
+}
+
+.action > a:nth-child(1)  > i {
+  color: #3288BD !important;
+}
+
+.action > a:nth-child(2) > i {
+  color: #EA4B38 !important;
+}
+
+.label-nav {
+  margin-left: 40px;
+  margin-right: 10px;
+}

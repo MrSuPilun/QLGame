@@ -28,6 +28,11 @@ ul {
 
 }
 
+.file {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 .file::before {
   font-family: "Font Awesome 5 Free";
   content: "\f15b";
@@ -46,7 +51,7 @@ ul {
   display: block;
 }
 
-#tree-folder li {
+.tree-folder li {
   padding-left: 20px;
 }
 
@@ -64,6 +69,7 @@ ul {
   height: 100vh;
   padding: 30px 10px;
   border-right: 1px solid rgba(0,0,0,0.1);
+  overflow-y: scroll;
 }
 
 .bd-content {

@@ -19,7 +19,7 @@ function InThuMuc($data, &$str = "", $path = "")
     }
     $str .= "</li>";
   } else {
-    $str .= "<li><a class='file' target='myiframe' href='$path" . $data['file_name'] . "'>" . $data['name'] . "</a></li>";
+    $str .= "<li><a class='file' target='myiframe' href='$path" . $data['file_name'] . "'><div>" . $data['name'] . "</div></a></li>";
   }
   $str .= "</ul>";
   return $str;
@@ -30,7 +30,7 @@ function HienThiBaiTap($store)
   $arr_dir = scandir($store);
   $arr_dir = array_values(array_diff($arr_dir, array('.', '..')));
   foreach ($arr_dir as $value) {
-    echo "<ul id='tree-folder'>";
+    echo "<ul class='tree-folder'>";
     $str = "";
     $path = "./$store/$value/path.json";
     $json = file_get_contents($path);
@@ -41,10 +41,10 @@ function HienThiBaiTap($store)
 }
 ?>
 <div class="row">
-  <div class="col-12 col-md-4 col-xl-4 bd-sidebar">
+  <div class="col-12 col-md-3 col-xl-3 bd-sidebar">
     <?php HienThiBaiTap("BaiTap"); ?>
   </div>
-  <main class="col-12 col-md-8 col-xl-8 bd-content">
+  <main class="col-12 col-md-9 col-xl-9 bd-content">
     <iframe id="myiframe" name="myiframe" frameborder="0"></iframe>
   </main>
 </div>

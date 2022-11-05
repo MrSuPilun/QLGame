@@ -1,66 +1,103 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Mang tim kiem va thay the</title>
-  <style type="text/css">
-    table {
-      color: #ffff00;
-      background-color: gray;
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
     }
 
-    table th {
-      background-color: blue;
-      font-style: vni-times;
-      color: yellow;
+    form {
+      margin-top: 50px;
+      width: 500px;
+    }
+
+    th {
+      text-align: left;
+    }
+
+    td>input,
+    img {
+      width: 100%;
+    }
+
+    tr,
+    th,
+    td {
+      border-bottom: none !important;
     }
   </style>
 </head>
 
 <body>
   <?php
-    function tong($arr)
-    {
-      $sum = 0;
-      for ($i = 0; $i < count($arr); $i++) {
+  function tong($arr)
+  {
+    $sum = 0;
+    for ($i = 0; $i < count($arr); $i++) {
+      if(is_numeric($arr[$i]))
         $sum += $arr[$i];
-      }
-      return $sum;
     }
-    $str = "";
-    $kq = 0;
-    if (isset($_POST['so'])) {
-      $so = $_POST['so'];
-    }
-    if (isset($_POST['tinh'])) {
-      $str = $_POST['mang'];
+    return $sum;
+  }
+  $str = "";
+  $kq = 0;
+  if (isset($_POST['so'])) {
+    $so = $_POST['so'];
+  }
+  if (isset($_POST['tinh'])) {
+    $str = $_POST['mang'];
+    if ($str == "") {
+      $kq = 0;
+    } else {
       $arr = explode(",", $str);
-
       $kq = tong($arr);
     }
+  }
   ?>
-  <form action="" method="post">
-    <table border="0" cellpadding="0">
-      <th colspan="2">
-        <h2>TÍNH TỔNG</h2>
-      </th>
-      <tr>
-        <td>Nhập mảng:</td>
-        <td><input type="text" name="mang" size="70" value="<?php echo $str; ?>" /></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><input type="submit" name="tinh" size="20" value="   Tính  " /></td>
-      </tr>
-      <td>Kết quả:</td>
-      <td><input type="text" name="kq" size="70" disabled="disabled" value="<?php echo $kq; ?> " /></td>
-      </tr>
-      <tr>
-        <td colspan="2" align="center"><label>(Các phần tử trong mảng sẽ cách nhau bằng dấu ",")</label></td>
-      </tr>
-    </table>
-  </form>
+  <center>
+    <form class="shadow-sm p-3 mb-5 bg-white rounded" method="post">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td></td>
+            <td style="text-align: center;">
+              <h4 style="margin-bottom: 20px;">TÍNH TỔNG</h4>
+            </td>
+          </tr>
+          <tr class="form-group">
+            <td>
+              <label for="inp-mang" class="col-form-label">Nhập mảng: </label>
+            </td>
+            <td>
+              <input type="text" name="mang" class="form-control" id="inp-mang" value="<?php echo $str; ?>" />
+              <small id="emailHelp" class="form-text text-muted">Các phần tử trong mảng cách nhau bằng dấu ','</small>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="text-align: center;">
+              <button type="submit" name="tinh" class="btn btn-primary" style="margin-top: 20px;">Tính</button>
+            </td>
+          </tr>
+          <tr class="form-group">
+            <td>
+              <label for="inp-mang" class="col-form-label">Kết quả: </label>
+            </td>
+            <td>
+              <input type="text" name="kq" class="form-control" id="inp-mang" disabled="disabled" value="<?php echo $kq; ?> " />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </center>
 </body>
 
 </html>

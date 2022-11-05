@@ -61,6 +61,16 @@
           "file_name": "Bai2_QLThongTinNhanVien.php"
         }
       ]
+    },
+    {
+      "name": "Kết hợp PHP và MySQL",
+      "folder": "KetHopPHPVaMySQL",
+      "paths": [
+        {
+          "name": "Quản lý bán sữa",
+          "file_name": "index.php"
+        }
+      ]
     }
   ]
 }

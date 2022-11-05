@@ -1,118 +1,168 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Phát sinh mảng và tính toán</title>
-  <style type="text/css">
-    table {
-      color: #ffff00;
-      background-color: gray;
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
     }
 
-    table th {
-      background-color: blue;
-      font-style: vni-times;
-      color: yellow;
+    form {
+      margin-top: 50px;
+      width: 500px;
+    }
+
+    th {
+      text-align: left;
+    }
+
+    td>input,
+    img {
+      width: 100%;
+    }
+
+    tr,
+    th,
+    td {
+      border-bottom: none !important;
     }
   </style>
 </head>
 
 <body>
   <?php
-   
-    function inMang($arr, $str = ',')
-    {
-      return implode($str, $arr);
-    }
 
-    function taoMang($n)
-    {
-      $arr = array();
-      for ($i = 0; $i < $n; $i++) {
-        $arr[] = rand(0, 20);
-      }
-      return $arr;
-    }
+  function inMang($arr, $str = ',')
+  {
+    return implode($str, $arr);
+  }
 
-    function tong($arr)
-    {
-      $sum = 0;
-      for ($i = 0; $i < count($arr); $i++) {
-        $sum += $arr[$i];
-      }
-      return $sum;
+  function taoMang($n)
+  {
+    $arr = array();
+    for ($i = 0; $i < $n; $i++) {
+      $arr[] = rand(0, 20);
     }
+    return $arr;
+  }
 
-    function gtln($arr)
-    {
-      $max = -1;
-      for ($i=0; $i < count($arr); $i++) { 
-        if($arr[$i] > $max)
-          $max = $arr[$i];
-      }
-      return $max;
+  function tong($arr)
+  {
+    if (count($arr) == 0)
+      return "";
+    $sum = 0;
+    for ($i = 0; $i < count($arr); $i++) {
+      $sum += $arr[$i];
     }
+    return $sum;
+  }
 
-    function gtnn($arr)
-    {
-      $max = 21;
-      for ($i=0; $i < count($arr); $i++) { 
-        if($arr[$i] < $max)
-          $max = $arr[$i];
-      }
-      return $max;
+  function gtln($arr)
+  {
+    if (count($arr) == 0)
+      return "";
+    $max = -1;
+    for ($i = 0; $i < count($arr); $i++) {
+      if ($arr[$i] > $max)
+        $max = $arr[$i];
     }
+    return $max == -1 ? "" : $max;
+  }
 
-    if (isset($_POST['sophantu']))
-      $sophantu = trim($_POST['sophantu']);
-    else
-      $sophantu = 0;
+  function gtnn($arr)
+  {
+    if (count($arr) == 0)
+      return "";
+    $max = 21;
+    for ($i = 0; $i < count($arr); $i++) {
+      if ($arr[$i] < $max)
+        $max = $arr[$i];
+    }
+    return $max == 21 ? "" : $max;
+  }
 
-    $str_kq = "";
-    if (isset($_POST['so'])) {
-      $so = $_POST['so'];
-    }
-    if (isset($_POST['tinh'])) {
-      $arr = taoMang($sophantu);
-      $str_kq = inMang($arr);
-    }
+  if (isset($_POST['sophantu']))
+    $sophantu = trim($_POST['sophantu']);
+  else
+    $sophantu = 0;
+
+  $arr = array();
+  $str_kq = "";
+  if (isset($_POST['so'])) {
+    $so = $_POST['so'];
+  }
+  if (isset($_POST['tinh'])) {
+    $arr = taoMang($sophantu);
+    $str_kq = inMang($arr);
+  }
   ?>
-
-  <form action="" method="post">
-    <table border="0" cellpadding="0">
-      <th colspan="2">
-        <h2>Phát sinh mảng và tính toán</h2>
-      </th>
-      <tr>
-        <td>Nhập số phần tử:</td>
-        <td><input type="text" name="sophantu" size="70" value="<?php echo $sophantu; ?>" /></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><input type="submit" name="tinh" size="20" value="   Phát sinh và tính toán  " /></td>
-      </tr>
-      <tr>
-        <td>Mảng:</td>
-        <td><input type="text" name="mang_kq" size="70" disabled="disabled" value="<?php echo inMang($arr); ?>" /></td>
-      </tr>
-
-      <tr>
-        <td>GTLN:</td>
-        <td><input type="text" name="mang_kq" size="70" disabled="disabled" value="<?php echo gtln($arr); ?>" /></td>
-      </tr>
-
-      <tr>
-        <td>GTNN:</td>
-        <td><input type="text" name="mang_kq" size="70" disabled="disabled" value="<?php echo gtnn($arr); ?>" /></td>
-      </tr>
-
-      <tr>
-        <td>Tổng mảng:</td>
-        <td><input type="text" name="mang_kq" size="70" disabled="disabled" value="<?php echo tong($arr); ?>" /></td>
-      </tr>
-    </table>
-  </form>
+  <center>
+    <form class="shadow-sm p-3 mb-5 bg-white rounded" method="post">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td></td>
+            <td style="text-align: center;">
+              <h4 style="margin-bottom: 20px;">PHÁT SINH MẢNG VÀ TÍNH TOÁN</h4>
+            </td>
+          </tr>
+          <tr class="form-group">
+            <td>
+              <label for="inp-sophantu" class="col-form-label">Nhập số phần tử: </label>
+            </td>
+            <td>
+              <input type="text" name="sophantu" class="form-control" value="<?php echo $sophantu; ?>" />
+              <small id="emailHelp" class="form-text text-muted">Nhập vào số phần tử</small>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="text-align: center;">
+              <button type="submit" name="tinh" class="btn btn-primary" style="margin-top: 20px;">Phát sinh và tính toán</button>
+            </td>
+          </tr>
+          <tr class="form-group">
+            <td>
+              <label class="col-form-label">Mảng: </label>
+            </td>
+            <td>
+              <input type="text" name="mang_kq" class="form-control" disabled="disabled" value="<?php echo inMang($arr); ?>" />
+            </td>
+          </tr>
+          <tr class="form-group">
+            <td>
+              <label class="col-form-label">GTLN: </label>
+            </td>
+            <td>
+              <input type="text" name="mang_kq" class="form-control" disabled="disabled" value="<?php echo gtln($arr); ?>" />
+            </td>
+          </tr>
+          <tr class="form-group">
+            <td>
+              <label class="col-form-label">GTNN: </label>
+            </td>
+            <td>
+              <input type="text" name="mang_kq" class="form-control" disabled="disabled" value="<?php echo gtnn($arr); ?>" />
+            </td>
+          </tr>
+          <tr class="form-group">
+            <td>
+              <label class="col-form-label">Tổng: </label>
+            </td>
+            <td>
+              <input type="text" name="mang_kq" class="form-control" disabled="disabled" value="<?php echo tong($arr); ?>" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </center>
 </body>
 
 </html>
