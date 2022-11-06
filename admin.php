@@ -65,7 +65,6 @@ switch ($tag) {
 		break;
 	case 'USER':
 		$tagName = "User";
-
 		include_once("pages/admin/user/_user.php");
 		break;
 	case 'NHA_PHAT_TRIEN':

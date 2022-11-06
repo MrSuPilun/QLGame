@@ -16,7 +16,7 @@ if(isset($_POST['delUser'])) {
 
 <!-- Modal -->
 <form method='POST'>
-	<div class="modal show" id="exampleModal">
+	<div class="modal show exampleModal">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -36,14 +36,3 @@ if(isset($_POST['delUser'])) {
 		</div>
 	</div>
 </form>
-
-<script>
-	const modal = document.getElementById("exampleModal");
-	const closes = document.getElementsByClassName("modal-btn-close");
-	for (let i = 0; i < closes.length; i++) {
-		closes[i].addEventListener('click', function() {
-			modal.className = modal.className.replace(" show", "");
-			console.log("OK");
-		});
-	}
-</script>

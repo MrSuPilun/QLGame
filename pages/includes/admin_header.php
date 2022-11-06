@@ -6,7 +6,7 @@
   <title>Atlantis Lite - Bootstrap 4 Admin Dashboard</title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <link rel="icon" href="assets/vendor/Atlantis-Lite-Admin/img/icon.ico" type="image/x-icon" />
-
+  <script src="assets/vendor/Atlantis-Lite-Admin/js/core/jquery.3.2.1.min.js"></script>
   <!-- Fonts and icons -->
   <script src="assets/vendor/Atlantis-Lite-Admin/js/plugin/webfont/webfont.min.js"></script>
   <script>
@@ -23,7 +23,7 @@
       }
     });
   </script>
-
+  <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.2.0-web/css/all.min.css">
   <!-- CSS Files -->
   <link rel="stylesheet" href="assets/vendor/Atlantis-Lite-Admin/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendor/Atlantis-Lite-Admin/css/atlantis.min.css">
