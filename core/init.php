@@ -81,6 +81,17 @@ class QLGame extends DBSQL
     return $this->queryDB($str_query);
   }
 
+  public function updateUser($maUser="",$tenUser="",$sdt="",$email="",$diaChi="")
+  {
+    $str_query = "UPDATE `USER` SET `TEN_USER`='$tenUser', `SDT`='$sdt', `EMAIL`='$email', `DIA_CHI`='$diaChi' WHERE `MA_USER`='$maUser'";
+    return $this->queryDB($str_query);
+  }
+  public function deleteUser($maUser="")
+  {
+    $str_query = "DELETE FROM `USER` WHERE `MA_USER`='$maUser'";
+    return $this->queryDB($str_query);
+  }
+
   public function layMaUser()
   {
     $lastRow = $this->queryDB("SELECT MA_USER FROM USER ORDER BY MA_USER DESC LIMIT 1");
@@ -142,6 +153,33 @@ class QLGame extends DBSQL
       return "Success";
     } else {
       return "Don't have an account?";
+    }
+  }
+
+  public function updateUserAdmin($maUser="",$tenUser="",$sdt="",$email="",$diaChi="")
+  {
+    if (!$tenUser || !$sdt || !$email || !$diaChi) {
+      return "Please enter full information.";
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      return "Email incorrect. Please enter another Email.";
+    }
+  
+    if (!preg_match("/^\\+?[0-9][0-9]{7,12}$/", $sdt)) {
+      return "Phone number incorrect. Please enter another phone number.";
+    }
+  
+    // if (mysqli_num_rows($this->queryDB("SELECT EMAIL FROM USER WHERE EMAIL='$email'")) > 0) {
+    //   return "Email already exist. Please enter another Email. ";
+    // }
+
+    @$updateUser = $this->updateUser($maUser, $tenUser, $sdt, $email, $diaChi);
+
+    if ($updateUser) {
+      return "Success";
+    } else {
+      return "Don't have user?";
     }
   }
 }

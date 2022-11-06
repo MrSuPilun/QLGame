@@ -5,3 +5,14 @@
 .btn-simple-danger {
   color: #f25961 !important;
 }
+
+/*----- Modal -----*/
+.modal.show {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: block;
+  padding-right: 17px;
+}
+
+::placeholder {
+  color: black;
+}

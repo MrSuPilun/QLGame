@@ -30,6 +30,9 @@
 
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link rel="stylesheet" href="assets/vendor/Atlantis-Lite-Admin/css/demo.css">
+
+  <!-- Modal -->
+  <link rel="stylesheet" href="css/_user.css">
 </head>
 
 <body>

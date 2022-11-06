@@ -1,6 +1,6 @@
 <?php
-if (isset($_GET['id'])) {
-	$id = $_GET['id'];
+if (isset($_GET['idUpdate'])) {
+	$id = $_GET['idUpdate'];
 } else {
 	$id = "";
 }
@@ -9,6 +9,8 @@ $sdt = "";
 $email = "";
 $diaChi = "";
 $result = $qlgame->queryDB("SELECT * FROM USER WHERE MA_USER like '$id'");
+$update = "";
+
 if($result) {
 	$row = mysqli_fetch_array($result);
 	$tenUser = $row['TEN_USER'];
@@ -16,18 +18,27 @@ if($result) {
 	$email = $row['EMAIL'];
 	$diaChi = $row['DIA_CHI'];
 }
+
+if(isset($_POST['updateUser'])) {
+	$tenUser = $_POST['hoTen'];
+	$sdt = $_POST['sdt'];
+	$email = $_POST['email'];
+	$diaChi = $_POST['diaChi'];
+
+	$update = $qlgame->updateUserAdmin($id, $tenUser, $sdt, $email, $diaChi);
+
+	if ($update == "Success") {
+		exit;
+		include_once('pages/admin/_user.php');
+	} else {
+		notifyView($update, "_user_update");
+		exit;
+	}
+}
 ?>
 
-<style>
-	.modal.show {
-		background-color: rgba(0, 0, 0, 0.5);
-		display: block;
-		padding-right: 17px;
-	}
-</style>
-
 <!-- Modal -->
-<form>
+<form method='POST'>
 	<div class="modal show" id="exampleModal">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -40,19 +51,19 @@ if($result) {
 				<div class="modal-body">
 					<div class="form-group">
 						<label>Full Name</label>
-						<input type="text" class="form-control" value="<?= $tenUser ?>">
+						<input name='hoTen' type="text" class="form-control" value="<?= $tenUser ?>">
 					</div>
 					<div class="form-group">
 						<label>Phone Number</label>
-						<input type="text" class="form-control" value="<?= $sdt ?>">
+						<input name='sdt' type="text" class="form-control" value="<?= $sdt ?>">
 					</div>
 					<div class="form-group">
 						<label for="exampleInputEmail1">Email address</label>
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $email ?>">
+						<input name='email' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $email ?>">
 					</div>
 					<div class="form-group">
 						<label>Address</label>
-						<input type="text" class="form-control" value="<?= $diaChi ?>">
+						<input name='diaChi' type="text" class="form-control" value="<?= $diaChi ?>">
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -70,6 +81,7 @@ if($result) {
 	for (let i = 0; i < closes.length; i++) {
 		closes[i].addEventListener('click', function() {
 			modal.className = modal.className.replace(" show", "");
+			console.log("OK");
 		});
 	}
 </script>

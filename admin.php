@@ -65,6 +65,7 @@ switch ($tag) {
 		break;
 	case 'USER':
 		$tagName = "User";
+		
 		if (isset($_POST['addUser'])) {
 			if (!isset($_POST['hoTen'])) {
 			  die('');
@@ -77,52 +78,19 @@ switch ($tag) {
 			$email = addslashes($_POST['email']);
 			$sdt = addslashes($_POST['sdt']);
 			$diaChi = addslashes($_POST['diaChi']);
-			$pQuyen = addslashes($_POST['pQuyen']);
-		  
-			if (!$tenDN || !$matKhau || !$hoTen || !$sdt || !$sdt || !$diaChi || !$pQuyen) {
-			  notifyView("Please enter full information.");
-			  exit;
+
+			if (isset($_POST['pQuyen'])) {
+				$pQuyen = $_POST['pQuyen'];
 			}
-		  
-			if (mysqli_num_rows($qlgame->queryDB("SELECT TEN_DN FROM USER WHERE TEN_DN='$tenDN'")) > 0) {
-			  notifyView("Sign In name already exist. Please enter another Sign In name.");
-			  exit;
-			}
-		  
-			if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			  notifyView("Email incorrect. Please enter another Email.");
-			  exit;
-			}
-		  
-			if (!preg_match("/^\\+?[0-9][0-9]{7,12}$/", $sdt)) {
-			  notifyView("Phone number incorrect. Please enter another phone number.");
-			  exit;
-			}
-		  
-			if (mysqli_num_rows($qlgame->queryDB("SELECT EMAIL FROM USER WHERE EMAIL='$email'")) > 0) {
-			  notifyView("Email already exist. Please enter another Email. ");
-			  exit;
-			}
-		  
-			if ($matKhau != $xNMK) {
-			  notifyView("Re-type password incorrect.");
-			  exit;
-			}
-		
-			if (!preg_match("/^\\+?[0-2]{1}$/", $pQuyen)) {
-				notifyView("Auth incorrect. Please enter another auth.");
-				exit;
-			}
-		  
-			$maUS = $qlgame->LayMaUser();
-			@$addUser = $qlgame->insertUser($maUS, $hoTen, $sdt, $email, $diaChi, $tenDN, $matKhau, $pQuyen);
-		  
-			if ($addUser) {
+
+			$result = $qlgame->dangKyUser($hoTen, $sdt, $email, $diaChi, $tenDN, $matKhau, $xNMK, $pQuyen);
+			if ($result == "Success") {
 			  include_once('pages/admin/_user.php');
 			} else {
 			  notifyView("Don't have an account?");
 			}
 		}
+		
 		if(isset($_POST['update'])) {
 			include_once('pages/admin/_user_update.php');
 		}

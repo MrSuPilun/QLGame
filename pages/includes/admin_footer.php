@@ -68,6 +68,9 @@
 
 	<!-- Atlantis JS -->
 	<script src="assets/vendor/Atlantis-Lite-Admin/js/atlantis.min.js"></script>
+
+	<!-- Modal -->
+	<!-- <script src="js/_user.js"></script> -->
 </body>
 
 </html>

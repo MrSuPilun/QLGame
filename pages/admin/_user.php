@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="css/_user.css">
+<script src="js/_user.js"></script>
 <?php
 
 $str = "";
@@ -41,14 +42,16 @@ if ($result) {
       }
       $str .= "<td>
         <div class='form-button-action'>
-          <a href='" . $_SERVER['PHP_SELF'] . "?id=$id&page=". $_GET['page'] ."'>
+          <a href='" . $_SERVER['PHP_SELF'] . "?idUpdate=$id&page=". $_GET['page'] ."'>
             <button type='button' data-toggle='tooltip' class='admin-btn-edit btn btn-link btn-simple-primary btn-lg' data-original-title='Edit Task'>
               <i class='fa fa-edit'></i>
             </button>
           </a>
-          <button type='button' data-toggle='tooltip' title='' class='admin-btn-delete btn btn-link btn-simple-danger' data-original-title='Remove'>
-            <i class='fa fa-times'></i>
-          </button>
+          <a href='" . $_SERVER['PHP_SELF'] . "?idDelete=$id&page=". $_GET['page'] ."'>
+            <button type='button' data-toggle='tooltip' title='' class='admin-btn-delete btn btn-link btn-simple-danger' data-original-title='Remove'>
+              <i class='fa fa-times'></i>
+            </button>
+          </a>
         </div>
       </td>";
       $str .= "</tr>";
@@ -57,13 +60,17 @@ if ($result) {
   }
 }
 
-if (isset($_GET['id'])) {
+if (isset($_GET['idUpdate'])) {
   include_once('pages/admin/_user_update.php');
+}
+
+if (isset($_GET['idDelete'])) {
+  include_once('pages/admin/_user_del.php');
 }
 
 ?>
 <form method='POST'>
-  <button name='add' type=submit class="btn btn-primary">Add User</button>
+  <button name='add' type=submit class="btn btn-primary mb-3">Add User</button>
 </form>
 <table class="table table-bordered table-head-bg-info table-bordered-bd-info">
   <thead>

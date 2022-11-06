@@ -12,7 +12,7 @@
               <div class="card-body">
                 <form align='center' method='POST'>
                   <div class="form-floating mb-3">
-
+                    
                     <div class="form-outline mb-4">
                       <div class="form-row mb-3">
                         <div class="form-group col-md-6">
