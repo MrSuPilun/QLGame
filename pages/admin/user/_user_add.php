@@ -1,3 +1,30 @@
+<?php
+if (isset($_POST['addUser'])) {
+	if (!isset($_POST['hoTen'])) {
+		die('');
+	}
+
+	$tenDN = addslashes($_POST['tenDN']);
+	$matKhau = addslashes($_POST['matKhau']);
+	$xNMK = addslashes($_POST['xNMK']);
+	$hoTen = addslashes($_POST['hoTen']);
+	$email = addslashes($_POST['email']);
+	$sdt = addslashes($_POST['sdt']);
+	$diaChi = addslashes($_POST['diaChi']);
+
+	if (isset($_POST['pQuyen'])) {
+		$pQuyen = $_POST['pQuyen'];
+	}
+
+	$result = $qlgame->dangKyUser($hoTen, $sdt, $email, $diaChi, $tenDN, $matKhau, $xNMK, $pQuyen);
+	if ($result == "Success") {
+		include_once('pages/admin/_user.php');
+	} else {
+		notifyView("Don't have an account?");
+	}
+}
+?>
+
 <!-- Modal -->
 <form method='POST'>
 	<div class="modal show" id="exampleModal">
@@ -33,23 +60,23 @@
 							<input name="xNMK" type="password" class="form-control" placeholder="Re-type Password">
 						</div>
 					</div>
-					
+
 					<div class="form-group">
 						<select name="pQuyen" class="form-group col-lg-12">
 
-							<option value="0" <?php if(isset($_POST['pQuyen'])&& $_POST['pQuyen']=='0') echo 'selected';?>>
+							<option value="0" <?php if (isset($_POST['pQuyen']) && $_POST['pQuyen'] == '0') echo 'selected'; ?>>
 
 								User
 
 							</option>
 
-							<option value="1" <?php if(isset($_POST['pQuyen'])&& $_POST['pQuyen']=='1') echo 'selected';?>>
+							<option value="1" <?php if (isset($_POST['pQuyen']) && $_POST['pQuyen'] == '1') echo 'selected'; ?>>
 
 								Employee
 
 							</option>
 
-							<option value="2" <?php if(isset($_POST['pQuyen'])&& $_POST['pQuyen']=='2') echo 'selected';?>>
+							<option value="2" <?php if (isset($_POST['pQuyen']) && $_POST['pQuyen'] == '2') echo 'selected'; ?>>
 
 								Admin
 

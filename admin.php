@@ -65,41 +65,8 @@ switch ($tag) {
 		break;
 	case 'USER':
 		$tagName = "User";
-		
-		if (isset($_POST['addUser'])) {
-			if (!isset($_POST['hoTen'])) {
-			  die('');
-			}
-		  
-			$tenDN = addslashes($_POST['tenDN']);
-			$matKhau = addslashes($_POST['matKhau']);
-			$xNMK = addslashes($_POST['xNMK']);
-			$hoTen = addslashes($_POST['hoTen']);
-			$email = addslashes($_POST['email']);
-			$sdt = addslashes($_POST['sdt']);
-			$diaChi = addslashes($_POST['diaChi']);
 
-			if (isset($_POST['pQuyen'])) {
-				$pQuyen = $_POST['pQuyen'];
-			}
-
-			$result = $qlgame->dangKyUser($hoTen, $sdt, $email, $diaChi, $tenDN, $matKhau, $xNMK, $pQuyen);
-			if ($result == "Success") {
-			  include_once('pages/admin/_user.php');
-			} else {
-			  notifyView("Don't have an account?");
-			}
-		}
-		
-		if(isset($_POST['update'])) {
-			include_once('pages/admin/_user_update.php');
-		}
-		else if(isset($_POST['add'])) {
-			include_once('pages/admin/_user_add.php');
-		}
-		else {
-			include_once("pages/admin/_user.php");
-		}
+		include_once("pages/admin/user/_user.php");
 		break;
 	case 'NHA_PHAT_TRIEN':
 		$tagName = "Developer";
