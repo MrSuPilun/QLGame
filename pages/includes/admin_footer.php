@@ -32,7 +32,6 @@
 	</div>
 
 	<!--   Core JS Files   -->
-	<script src="assets/vendor/Atlantis-Lite-Admin/js/core/jquery.3.2.1.min.js"></script>
 	<script src="assets/vendor/Atlantis-Lite-Admin/js/core/popper.min.js"></script>
 	<script src="assets/vendor/Atlantis-Lite-Admin/js/core/bootstrap.min.js"></script>
 
@@ -68,6 +67,9 @@
 
 	<!-- Atlantis JS -->
 	<script src="assets/vendor/Atlantis-Lite-Admin/js/atlantis.min.js"></script>
+
+	<!-- Modal -->
+	<!-- <script src="js/_user.js"></script> -->
 </body>
 
 </html>
