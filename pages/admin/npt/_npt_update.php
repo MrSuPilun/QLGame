@@ -1,0 +1,25 @@
+<?php
+$tenNPT = "";
+
+if (isset($_GET['id'])) {
+	$id = $_GET['id'];
+} else {
+	$id = "";
+}
+
+$result = $qlgame->queryDB("SELECT * FROM NHA_PHAT_TRIEN WHERE MA_NPT like '$id'");
+
+if($result) {
+	$row = mysqli_fetch_array($result);
+	$tenNPT = $row['TEN_NPT'];
+}
+
+if(isset($_POST['updateNPT'])) {
+	$tenNPT = $_POST['tenNPT'];
+
+	$update = $qlgame->updateNPTAdmin($id, $tenNPT);
+
+} else {
+	include_once("pages/admin/npt/_modal_npt_update.php");
+}
+?>

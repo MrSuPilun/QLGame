@@ -1,0 +1,170 @@
+{
+    "name": "Nguyễn Hoàng Minh Phúc",
+    "folder": "NguyenHoangMinhPhuc",
+    "paths": [
+      {
+        "name": "Mảng",
+        "folder": "BT_Mang",
+        "paths": [
+          {
+            "name": "Bài tập 1 - Một số thao tác trên mảng số nguyên",
+            "file_name": "Bai_1_MotSoThaoTacMangSoNguyen.php"
+          },
+          {
+            "name": "Bài tập 2 - Thiết kế Form tìm năm nhuận",
+            "file_name": "Bai_2_ThietKeFormTimNamNhuan.php"
+          },
+          {
+            "name": "Bài tập 3 - Thiết kế Form tìm năm âm lịch",
+            "file_name": "Bai_3_ThietKeFormTimNamAmLich.php"
+          },
+          {
+            "name": "Bài tập 4 - Thiết kế Form nhập và tính trên dãy số",
+            "file_name": "Bai_4_ThietKeFormNhapVaTinhTrenDaySo.php"
+          },
+          {
+            "name": "Bài tập 5 - Thiết kế Form Phát sinh mảng và tính toán",
+            "file_name": "Bai_5_ThietKeFormPhatSinhMangVaTinhToan.php"
+          },
+          {
+            "name": "Bài tập 6 - Thiết kế Form Tìm kiếm",
+            "file_name": "Bai_6_ThietKeFormTimKiem.php"
+          },
+          {
+            "name": "Bài tập 7 - Thiết kế Form Thay thế",
+            "file_name": "Bai_7_ThietKeFormThayThe.php"
+          },
+          {
+            "name": "Bài tập 8 - Thiết kế Form Sắp xếp mảng",
+            "file_name": "Bai_8_ThietKeFormSapXep.php"
+          },
+          {
+            "name": "Bài tập 9 - Thiết kế Form Đếm phần tử, ghép mảng và sắp xếp",
+            "file_name": "Bai_9_ThietKeFormDemPhanTu.php"
+          }
+        ]
+      },
+      {
+        "name": "SQL",
+        "folder": "BT_SQL",
+        "paths": [
+          {
+            "name": "Hiển thị danh sách khách hàng",
+            "file_name": "ds_khachHang.php"
+          },
+          {
+            "name": "Hiển thị danh sách khách hàng tùy biến",
+            "file_name": "ds_khachHang_tuyBien.php"
+          },
+          {
+            "name": "Sửa, xóa khách hàng",
+            "file_name": "ds_khachHang_tt.php"
+          },
+          {
+            "name": "Hiển thị danh sách sữa",
+            "file_name": "ds_sua.php"
+          },
+          {
+            "name": "Hiển thị danh sách hãng sữa",
+            "file_name": "ds_hangSua.php"
+          },
+          {
+            "name": "Hiển thị danh sách sữa phân trang",
+            "file_name": "ds_sua_phanTrang.php"
+          },
+          {
+            "name": "Hiển thị danh sách sữa dạng cột",
+            "file_name": "ds_sua_cot.php"
+          },
+          {
+            "name": "Hiển thị danh sách sữa dạng cột có link",
+            "file_name": "ds_sua_cot_link.php"
+          },
+          {
+            "name": "Hiển thị danh sách sữa đơn giản",
+            "file_name": "ds_sua_dongian.php"
+          },
+          {
+            "name": "Hiển thị danh sách sữa chi tiết có phân trang",
+            "file_name": "ds_sua_chiTietPhanTrang.php"
+          },
+          {
+            "name": "Tìm kiếm danh sách sữa đơn giản",
+            "file_name": "ds_sua_timKiemDonGian.php"
+          },
+          {
+            "name": "Tìm kiếm danh sách sữa nâng cao",
+            "file_name": "ds_sua_timKiemNangCao.php"
+          },
+          {
+            "name": "Thêm sữa vào danh sách",
+            "file_name": "ds_sua_themMoi.php"
+          }
+        ]
+      },
+      {
+        "name": "OOP",
+        "folder": "BT_OOP",
+        "paths": [
+          {
+            "name": "Quản lý sinh viên và giáo viên",
+            "file_name": "QL_GV_SV.php"
+          },
+          {
+            "name": "Quản lý nhân viên",
+            "file_name": "QL_NhanVien.php"
+          }
+        ]
+      },
+      {
+        "name": "Form",
+        "folder": "BT_Form",
+        "paths": [
+          {
+            "name": "Check Box",
+            "file_name": "Form_CheckBox.php"
+          },
+          {
+            "name": "Combo Box",
+            "file_name": "Form_ComboBox.php"
+          },
+          {
+            "name": "List Box",
+            "file_name": "Form_ListBox.php"
+          },
+          {
+            "name": "Radio Button",
+            "file_name": "Form_RadioButton.php"
+          },
+          {
+            "name": "Text Field Multiple",
+            "file_name": "Form_TextField_Multiple.php"
+          },
+          {
+            "name": "Text Field Nhập tên",
+            "file_name": "Form_TextField_NhapTen.php"
+          },
+          {
+            "name": "Text Field",
+            "file_name": "Form_TextField.php"
+          },
+          {
+            "name": "Tính diện tích",
+            "file_name": "FormDienTich.php"
+          },
+          {
+            "name": "Nhập thông tin",
+            "file_name": "FormInfo.php"
+          },
+          {
+            "name": "Phép tính",
+            "file_name": "FormPhepTinh.php"
+          },
+          {
+            "name": "Tính tiền điện",
+            "file_name": "FormTienDien.php"
+          }
+        ]
+      }
+    ]
+  }

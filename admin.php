@@ -62,6 +62,7 @@ switch ($tag) {
 		break;
 	case 'GAME':
 		$tagName = "Game";
+		include_once("pages/admin/game/_game.php");
 		break;
 	case 'USER':
 		$tagName = "User";
@@ -69,12 +70,15 @@ switch ($tag) {
 		break;
 	case 'NHA_PHAT_TRIEN':
 		$tagName = "Developer";
+		include_once("pages/admin/npt/_npt.php");
 		break;
 	case 'HOA_DON':
 		$tagName = "Receipt";
+		include_once("pages/admin/hoaDon/_hoaDon.php");
 		break;
 	case 'CTHD':
 		$tagName = "Receipt Detail";
+		include_once("pages/admin/cthd/_cthd.php");
 		break;
 	default:
 		$tagName = "NOT FOUND";
