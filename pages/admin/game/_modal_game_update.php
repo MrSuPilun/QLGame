@@ -17,20 +17,18 @@
 					<div class="form-group">
 						<label>Developer</label>
 						<select name="maNPT" class="form-control" required>
-                            <option value="<?= $tenDev ?>">Developer</option>
-                            <?php
-                                $dev = $qlgame->queryDB("SELECT MA_NPT, TEN_NPT FROM NHA_PHAT_TRIEN");
-                                if(mysqli_num_rows($dev) > 0) {
-                                    while($row = mysqli_fetch_array($dev)){
-                                        $selected = isset($_POST['maNPT']) && $_POST['maNPT'] == $row['MA_NPT'] ? "selected" : "";
-                                        echo "<option value='". $row['MA_NPT'] ."' $selected>".$row['TEN_NPT']."</option>";
-                                    }
-                                }
-                            ?>
-                        </select>
+							<?php
+							if (mysqli_num_rows($listNPT) > 0) {
+								while ($row = mysqli_fetch_array($listNPT)) {
+									$selected = $maNPT == $row['MA_NPT'] ? "selected" : "";
+									echo "<option value='" . $row['MA_NPT'] . "' $selected>" . $row['TEN_NPT'] . "</option>";
+								}
+							}
+							?>
+						</select>
 					</div>
 					<div class="form-group">
-                        <label>Price</label>
+						<label>Price</label>
 						<input name='donGia' type="text" class="form-control" value="<?= $donGia ?>">
 					</div>
 					<div class="form-group">

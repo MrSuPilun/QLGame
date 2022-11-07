@@ -88,7 +88,7 @@ class QLGame extends DBSQL
   }
   public function updateGame($maGame="",$tenGame="",$maNPT="",$donGia="",$hinh="")
   {
-    $str_query = "UPDATE `GAME` SET `TEN_GAME`='$tenGame', `MA_NPT`='$maNPT', `DON_GIA`='$donGia', `HINH`='$hinh' WHERE `MA_GAME`='$maGame'";
+    $str_query = "UPDATE `GAME` SET `TEN_GAME`='$tenGame', `MA_NPT`='$maNPT', `DON_GIA`=$donGia, `HINH`='$hinh' WHERE `MA_GAME`='$maGame'";
     return $this->queryDB($str_query);
   }
   public function updateNPT($maNPT="",$tenNPT="")
