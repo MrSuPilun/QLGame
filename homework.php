@@ -45,8 +45,10 @@ function HienThiBaiTap($store)
     <?php HienThiBaiTap("BaiTap"); ?>
   </div>
   <main class="col-12 col-md-9 col-xl-9 bd-content">
-    <iframe id="myiframe" name="myiframe" frameborder="0"></iframe>
+    <iframe id="myiframe" name="myiframe" frameborder="0">
+    </iframe>
   </main>
+  
 </div>
 <script src="js/homework.js"></script>
 <?php

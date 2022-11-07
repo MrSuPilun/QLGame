@@ -59,6 +59,20 @@
         {
           "name": "Bài 2 - Quản lý thông tin nhân viên",
           "file_name": "Bai2_QLThongTinNhanVien.php"
+        },
+        {
+          "name": "Bài 3 - Phép Tính Trên Phân Số",
+          "file_name": "Bai3_PhepTinhTrenPhanSo.php"
+        }
+      ]
+    },
+    {
+      "name": "Mảng hai chiều",
+      "folder": "Mang2Chieu",
+      "paths": [
+        {
+          "name": "Bài 1 - Tạo và hiển thị ma trận số nguyên",
+          "file_name": "Bai1_TaoVaHienThiMaTranSoNguyen.php"
         }
       ]
     },
