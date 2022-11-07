@@ -86,9 +86,35 @@ class QLGame extends DBSQL
     $str_query = "UPDATE `USER` SET `TEN_USER`='$tenUser', `SDT`='$sdt', `EMAIL`='$email', `DIA_CHI`='$diaChi' WHERE `MA_USER`='$maUser'";
     return $this->queryDB($str_query);
   }
+  public function updateGame($maGame="",$tenGame="",$maNPT="",$donGia="",$hinh="")
+  {
+    $str_query = "UPDATE `GAME` SET `TEN_GAME`='$tenGame', `MA_NPT`='$maNPT', `DON_GIA`='$donGia', `HINH`='$hinh' WHERE `MA_GAME`='$maGame'";
+    return $this->queryDB($str_query);
+  }
+  public function updateNPT($maNPT="",$tenNPT="")
+  {
+    $str_query = "UPDATE `NHA_PHAT_TRIEN` SET `TEN_NPT`='$tenNPT' WHERE `MA_NPT`='$maNPT'";
+    return $this->queryDB($str_query);
+  }
+
   public function deleteUser($maUser="")
   {
     $str_query = "DELETE FROM `USER` WHERE `MA_USER`='$maUser'";
+    return $this->queryDB($str_query);
+  }
+  public function deleteGame($maGame="")
+  {
+    $str_query = "DELETE FROM `GAME` WHERE `MA_GAME`='$maGame'";
+    return $this->queryDB($str_query);
+  }
+  public function deleteNPT($maNPT="")
+  {
+    $str_query = "DELETE FROM `NHA_PHAT_TRIEN` WHERE `MA_NPT`='$maNPT'";
+    return $this->queryDB($str_query);
+  }
+  public function deleteHoaDon($maHD="")
+  {
+    $str_query = "DELETE FROM `HOA_DON` WHERE `MA_HD`='$maHD'";
     return $this->queryDB($str_query);
   }
 
@@ -99,6 +125,22 @@ class QLGame extends DBSQL
     $maMax = substr($last, 2, 3);
     $maUS = (int)$maMax + 1;
     return "US0" . $maUS;
+  }
+  public function layMaGame()
+  {
+    $lastRow = $this->queryDB("SELECT MA_GAME FROM GAME ORDER BY MA_GAME DESC LIMIT 1");
+    $last =  implode(mysqli_fetch_array($lastRow));
+    $maMax = substr($last, 2, 3);
+    $maGA = (int)$maMax + 1;
+    return "GA0" . $maGA;
+  }
+  public function layMaNPT()
+  {
+    $lastRow = $this->queryDB("SELECT MA_NPT FROM NHA_PHAT_TRIEN ORDER BY MA_NPT DESC LIMIT 1");
+    $last =  implode(mysqli_fetch_array($lastRow));
+    $maMax = substr($last, 3, 3);
+    $maNPT = (int)$maMax + 1;
+    return "NPT" . $maNPT;
   }
 
   public function dangNhapUser($tenDN, $matKhau)
@@ -180,6 +222,84 @@ class QLGame extends DBSQL
       return "Success";
     } else {
       return "Don't have user?";
+    }
+  }
+
+  public function themGame($tenGame="",$maNPT="",$donGia="",$hinh="")
+  {
+    if (!$tenGame || !$maNPT || !$donGia || !$hinh) {
+      return "Please enter full information.";
+    }
+  
+    if ($donGia < 0) {
+      return "The price must not be less than zero.";
+    }
+
+    if (!preg_match("/\bhttps?:\/\/\S+(?:png|jpg)\b/", $hinh)) {
+      return "Image Link incorrect. Please enter another image link.";
+    }
+  
+    $maGA = $this->layMaGame();
+    @$addGame = $this->insertGame($maGA, $tenGame, $maNPT, $donGia, $hinh);
+  
+    if ($addGame) {
+      return "Success";
+    } else {
+      return "Don't have game?";
+    }
+  }
+
+  public function updateGameAdmin($maGame="",$tenGame="",$maNPT="",$donGia="",$hinh="")
+  {
+    if (!$tenGame || !$maNPT || !$donGia || !$hinh) {
+      return "Please enter full information.";
+    }
+
+    if ($donGia < 0) {
+      return "The price must not be less than zero.";
+    }
+  
+    if (!preg_match("/\bhttps?:\/\/\S+(?:png|jpg)\b/", $hinh)) {
+      return "Image Link incorrect. Please enter another image link.";
+    }
+
+    @$updateGame = $this->updateGame($maGame, $tenGame, $maNPT, $donGia, $hinh);
+
+    if ($updateGame) {
+      return "Success";
+    } else {
+      return "Don't have game?";
+    }
+  }
+
+  public function themNPT($tenNPT="")
+  {
+    if (!$tenNPT) {
+      return "Please enter full information.";
+    }
+  
+    $maNPT = $this->layMaNPT();
+    @$addNPT = $this->insertNhaPhatTrien($maNPT, $tenNPT);
+  
+    if ($addNPT) {
+      return "Success";
+    } else {
+      return "Don't have a developer?";
+    }
+  }
+
+  public function updateNPTAdmin($maNPT="",$tenNPT="")
+  {
+    if (!$tenNPT) {
+      return "Please enter full information.";
+    }
+
+    @$updateNPT = $this->updateNPT($maNPT, $tenNPT);
+
+    if ($updateNPT) {
+      return "Success";
+    } else {
+      return "Don't have a developer?";
     }
   }
 }
