@@ -11,10 +11,6 @@ if (isset($_GET['id'])) {
 }
 
 $result = $qlgame->queryDB("SELECT * FROM GAME WHERE MA_GAME like '$id'");
-// $dev = mysqli_fetch_array($qlgame->queryDB("SELECT NHA_PHAT_TRIEN.MA_NPT
-//                                             FROM GAME JOIN NHA_PHAT_TRIEN ON GAME.MA_NPT = NHA_PHAT_TRIEN.MA_NPT 
-//                                             WHERE GAME.MA_GAME like '$id'"));
-
 $listNPT = $qlgame->queryDB("SELECT MA_NPT, TEN_NPT FROM NHA_PHAT_TRIEN");
 
 if ($result) {
