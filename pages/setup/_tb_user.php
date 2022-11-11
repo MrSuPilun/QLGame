@@ -18,8 +18,8 @@ $arr_data = array(
 );
 ?>
 <h3>Khách Hàng</h3>
-<table class="table">
-  <thead>
+<table class="table table-bordered">
+  <thead class="thead-light">
     <tr>
       <!-- <th scope="col">#</th> -->
       <th scope="col">ID</th>
@@ -31,7 +31,6 @@ $arr_data = array(
       <th scope="col">Mật khẩu</th>
       <th scope="col">Quyền</th>
       <th scope="col">Check</th>
-
     </tr>
   </thead>
   <tbody>

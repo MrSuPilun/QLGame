@@ -23,8 +23,8 @@ $arr_data = array(
 );
 ?>
 <h3>Chi Tiết Hóa Đơn</h3>
-<table class="table">
-  <thead>
+<table class="table table-bordered">
+  <thead class="thead-light">
     <tr>
       <!-- <th scope="col">#</th> -->
       <th scope="col">ID HĐ</th>
