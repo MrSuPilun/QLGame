@@ -13,8 +13,8 @@ $arr_data = array(
 );
 ?>
 <h3>Nhà Phát Hành</h3>
-<table class="table">
-  <thead>
+<table class="table table-bordered">
+  <thead class="thead-light">
     <tr>
       <!-- <th scope="col">#</th> -->
       <th scope="col">ID</th>
