@@ -25,9 +25,9 @@ if ($result) {
             break;
           case 7:
             if ($rows[$i] == 2) {
-              $str .= "<td><b style='color: #f25961;'>Admin</b></td>";
+              $str .= "<td><b class='text-danger'>Admin</b></td>";
             } else if ($rows[$i] == 1) {
-              $str .= "<td><b>Employee</b></td>";
+              $str .= "<td><b class='text-warning'>Employee</b></td>";
             } else {
               $str .= "<td>User</td>";
             }

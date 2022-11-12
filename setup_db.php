@@ -15,17 +15,17 @@ $qlgame->connectDB();
   <div class="form-group d-flex justify-content-between">
     <div class="form-check form-check-inline">
       <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="action[]" value="createDB"> Create Database
+        <input class="form-check-input" type="checkbox" name="action[]" value="createDB" checked> Create Database
       </label>
     </div>
     <div class="form-check form-check-inline">
       <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="action[]" value="createTabel"> Create Table
+        <input class="form-check-input" type="checkbox" name="action[]" value="createTabel" checked> Create Table
       </label>
     </div>
     <div class="form-check form-check-inline">
       <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="action[]" value="insertDB"> Insert Record
+        <input class="form-check-input" type="checkbox" name="action[]" value="insertDB" checked> Insert Record
       </label>
     </div>
   </div>

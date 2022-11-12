@@ -3,7 +3,7 @@ session_start();
 include_once("core/init.php");
 $qlgame->connectDB();
 $qlgame->getConnect()->select_db("QLGAME");
-$arrTable = array("USER" => "Người Dùng", "GAME" => "Game", "NHA_PHAT_TRIEN" => "Nhà Phát Triển", "HOA_DON" => "Hóa Đơn", "CTHD" => "Chi Tiết Hóa Đơn");
+$arrTable = array("USER" => "User", "GAME" => "Game", "NHA_PHAT_TRIEN" => "Developer", "HOA_DON" => "Receipt", "CTHD" => "Receipt Detail");
 $tag = "DASHBOARD";
 if(isset($_SESSION['tag'])) {
 	$tag = $_SESSION['tag'];

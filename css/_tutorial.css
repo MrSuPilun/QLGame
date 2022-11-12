@@ -1,0 +1,18 @@
+.tus-picture {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.tus-picture > img {
+  border-width: 5px;
+  border-style: outset;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tus-img-name {
+  margin-top: 5px;
+  display: block;
+  font-size: 15px;
+}
