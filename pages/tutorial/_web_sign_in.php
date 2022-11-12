@@ -29,7 +29,7 @@
     <i class="tus-img-name">Hình 2</i>
   </div>
 
-  <p>- Sau khi đăng nhập thành công người dùng sẽ được chuyển về trang chủ của trang web, nút "Sign In" sẽ được thay thế bằng nút có tên đăng nhập người dùng.</p>
+  <p>- Sau khi đăng nhập thành công người dùng sẽ được chuyển về trang chủ của trang web, nút "Sign In" sẽ được thay thế bằng nút đăng xuất có tên đăng nhập người dùng.</p>
   <div class="tus-picture">
     <img src="../../assets/images/web_sign_in_3.png" style="width: 70%;">
     <i class="tus-img-name">Hình 3</i>

@@ -10,7 +10,7 @@ include_once('includes/header.php');
     <?php include_once("pages/tutorial/sidebar.php") ?>
   </div>
   <main class="col-12 col-md-10 col-xl-10 bd-content">
-    <iframe id="myiframe" name="myiframe" frameborder="0">
+    <iframe id="myiframe" name="myiframe" frameborder="0" src="pages/tutorial/_baitap.php">
     </iframe>
   </main>
   
