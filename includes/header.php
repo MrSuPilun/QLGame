@@ -33,14 +33,17 @@
 				<li class="nav-item <?php echo activeClasses($p, 0) ?>">
 					<a class="nav-link" href="index.php">Thông tin nhóm</span></a>
 				</li>
+				<li class="nav-item <?php echo activeClasses($p, 4) ?>">
+					<a class="nav-link" href="tutorial.php">Hướng dẫn</a>
+				</li>
 				<li class="nav-item <?php echo activeClasses($p, 1) ?>">
 					<a class="nav-link" href="homework.php">Bài tập</a>
 				</li>
-				<li class="nav-item <?php echo activeClasses($p, 2) ?>">
-					<a class="nav-link" href="web.php">Web</a>
-				</li>
 				<li class="nav-item <?php echo activeClasses($p, 3) ?>">
 					<a class="nav-link" href="setup_db.php">Setup</a>
+				</li>
+				<li class="nav-item <?php echo activeClasses($p, 2) ?>">
+					<a class="nav-link" href="web.php">Web</a>
 				</li>
 			</ul>
 		</div>
