@@ -31,7 +31,7 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item <?php echo activeClasses($p, 0) ?>">
-					<a class="nav-link" href="index.php">Thông tin nhóm</span></a>
+					<a class="nav-link" href="introduce.php">Thông tin nhóm</span></a>
 				</li>
 				<li class="nav-item <?php echo activeClasses($p, 4) ?>">
 					<a class="nav-link" href="tutorial.php">Hướng dẫn</a>
