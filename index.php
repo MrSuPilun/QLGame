@@ -7,6 +7,7 @@ $page_title = 'Trang chủ';
 include_once ('includes/header.php');
  
 // LAYOUT
+include_once('pages/introduce/_introduce.php');
 
 // Include footer
 include_once ('includes/footer.php');
