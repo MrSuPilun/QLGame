@@ -17,7 +17,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary modal-btn-close">Close</button>
-					<button type="submit" name="updateNPT" class="btn btn-primary">Save changes</button>
+					<button type="submit" name="updateNPTAdmin" class="btn btn-primary">Save changes</button>
 				</div>
 			</div>
 		</div>

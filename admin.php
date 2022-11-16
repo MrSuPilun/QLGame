@@ -15,13 +15,13 @@ function activeClasses($p = "DASHBOARD", $i)
 	return $i == $p ? "active" : "";
 }
 
-function notifyView($notify = "")
-{
-  echo "<div class='notify'> " .
-    "<form method='POST'>" .
-    "<div class='small' style='color:black;'>$notify <button name='register' style='color:black;font-weight:bold;background-color: transparent;'>Return</button></div>" .
-    "</form></div>";
-}
+// function notifyView($notify = "")
+// {
+//   echo "<div class='notify'> " .
+//     "<form method='POST'>" .
+//     "<div class='small' style='color:black;'>$notify <button name='register' style='color:black;font-weight:bold;background-color: transparent;'>Return</button></div>" .
+//     "</form></div>";
+// }
 
 foreach ($arrTable as $key => $value) {
 	if (isset($_GET[$key])) {

@@ -1,4 +1,26 @@
 <?php
+
+function notifyView($notify = "", $formName = "")
+{
+  echo "<form method='POST'>".
+	"<div class='modal show exampleModal'>".
+		"<div class='modal-dialog'>".
+			"<div class='modal-content'>".
+				"<div class='modal-header'>".
+					"<h5 class='modal-title' id='exampleModalLabel'><b>Update Game</b></h5>".
+				"</div>".
+				"<div class='modal-body'>".
+					"<p>$notify</p>".
+				"</div>".
+				"<div class='modal-footer'>".
+					"<button type='submit' name='$formName' class='btn btn-primary'>Return</button>".
+				"</div>".
+			"</div>".
+		"</div>".
+	"</div>".
+"</form>";
+}
+
 $tenGame = "";
 $maNPT = "";
 $donGia = "";
@@ -21,13 +43,21 @@ if ($result) {
 	$hinh = $row['HINH'];
 }
 
-if (isset($_POST['updateGame'])) {
+if (isset($_POST['updateGameAdmin'])) {
 	$tenGame = $_POST['tenGame'];
 	$maNPT = $_POST['maNPT'];
 	$donGia = $_POST['donGia'];
 	$hinh = $_POST['hinh'];
 
 	$update = $qlgame->updateGameAdmin($id, $tenGame, $maNPT, $donGia, $hinh);
+
+	if($update == "Success") {
+		include_once('pages/admin/game/_game_show.php');
+	} else {
+		notifyView($update, "updateGame");
+		exit;
+	}
+
 } else {
 	include_once("pages/admin/game/_modal_game_update.php");
 }
