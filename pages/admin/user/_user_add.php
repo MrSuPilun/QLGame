@@ -1,26 +1,4 @@
 <?php
-
-function notifyView($notify = "", $formName = "")
-{
-  echo "<form method='POST'>".
-	"<div class='modal show exampleModal'>".
-		"<div class='modal-dialog'>".
-			"<div class='modal-content'>".
-				"<div class='modal-header'>".
-					"<h5 class='modal-title' id='exampleModalLabel'><b>Create User</b></h5>".
-				"</div>".
-				"<div class='modal-body'>".
-					"<p>$notify</p>".
-				"</div>".
-				"<div class='modal-footer'>".
-					"<button type='submit' name='$formName' class='btn btn-primary'>Return</button>".
-				"</div>".
-			"</div>".
-		"</div>".
-	"</div>".
-"</form>";
-}
-
 if (isset($_POST['addUser'])) {
 	if (!isset($_POST['hoTen'])) {
 		die('');
@@ -43,7 +21,7 @@ if (isset($_POST['addUser'])) {
 	if($result == "Success") {
 		include_once('pages/admin/user/_user_show.php');
 	} else {
-		notifyView($result, "createUser");
+		notifyView($result, "createUser", "Create User");
 		exit;
 	}
 

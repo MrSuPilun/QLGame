@@ -1,26 +1,4 @@
 <?php
-
-function notifyView($notify = "", $formName = "")
-{
-  echo "<form method='POST'>".
-	"<div class='modal show exampleModal'>".
-		"<div class='modal-dialog'>".
-			"<div class='modal-content'>".
-				"<div class='modal-header'>".
-					"<h5 class='modal-title' id='exampleModalLabel'><b>Update Game</b></h5>".
-				"</div>".
-				"<div class='modal-body'>".
-					"<p>$notify</p>".
-				"</div>".
-				"<div class='modal-footer'>".
-					"<button type='submit' name='$formName' class='btn btn-primary'>Return</button>".
-				"</div>".
-			"</div>".
-		"</div>".
-	"</div>".
-"</form>";
-}
-
 $tenGame = "";
 $maNPT = "";
 $donGia = "";
@@ -54,7 +32,7 @@ if (isset($_POST['updateGameAdmin'])) {
 	if($update == "Success") {
 		include_once('pages/admin/game/_game_show.php');
 	} else {
-		notifyView($update, "updateGame");
+		notifyView($update, "updateGame", "Update Game");
 		exit;
 	}
 
