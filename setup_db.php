@@ -2,6 +2,7 @@
 $p = 3;
 $name_database = "QLGAME";
 $page_title = 'Khởi tạo dữ liệu';
+include_once('pages/setup/_createDB.php');
 // Include database, session, general info
 include_once('core/init.php');
 // Include database, session, general info
