@@ -11,10 +11,10 @@
           <div class="u-align-left u-container-style u-list-item u-repeater-item u-shape-rectangle u-white u-list-item-1">
             <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
               <!-- <div alt="" class="u-image u-image-circle u-image-1" data-image-width="404" data-image-height="404"></div> -->
-              <img class="u-image u-image-circle" src="https://scontent.fdad3-4.fna.fbcdn.net/v/t1.18169-9/21370871_126679881401881_8155164712021165779_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=C-L4TJHku4QAX-0EZR8&_nc_ht=scontent.fdad3-4.fna&oh=00_AfAu11EQEVqqQgJDMEjKmt5427lq7MJ0f3kbju0jz3TjgA&oe=639AD1FB">
+              <img class="u-image u-image-circle" src="./assets/images/avatars/PNA.jpg" style=>
               <h6 class="u-custom-font u-font-montserrat u-text u-text-1">Phạm Ngọc Ẩn</h6>
-              <p class="u-text u-text-palette-1-base u-text-2">creative leader</p>
-              <p class="u-text u-text-3">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum</p>
+              <p class="u-text u-text-palette-1-base u-text-2">61.CNTT-1</p>
+              <p class="u-text u-text-3">MSSV: 61130013</p>
               <div class="u-social-icons u-spacing-10 u-social-icons-1">
                 <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-facebook u-social-icon u-text-palette-1-base u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-ad72"></use>
@@ -42,10 +42,10 @@
           <div class="u-align-left u-container-style u-list-item u-repeater-item u-shape-rectangle u-white u-list-item-2">
             <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
               <!-- <div alt="" class="u-image u-image-circle u-image-2" data-image-width="404" data-image-height="404"></div> -->
-              <img class="u-image u-image-circle" src="https://scontent.fdad3-4.fna.fbcdn.net/v/t1.6435-9/139480717_720549905269431_7518130410145377754_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=JVQiffE3QjcAX_Xx_uV&_nc_oc=AQnJEQ71tJGnJjrTYNDrR6oy0_8gQ9v__K-5QiKLemQ8LVkIgUlu4NgbJsZRfTW40IE&_nc_ht=scontent.fdad3-4.fna&oh=00_AfC3eGeYBr9YVcSb95_AZAleISkS1lCXoUXO68W3BgOj2g&oe=639AC4D2">
+              <img class="u-image u-image-circle" src="./assets/images/avatars/NHMP.jpg">
               <h6 class="u-custom-font u-text u-text-4">Nguyễn Hoàng Minh Phúc</h6>
-              <p class="u-text u-text-palette-1-base u-text-5">creative leader</p>
-              <p class="u-text u-text-6">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum</p>
+              <p class="u-text u-text-palette-1-base u-text-5">61.CNTT-1</p>
+              <p class="u-text u-text-6">MSSV: 61134186</p>
               <div class="u-social-icons u-spacing-10 u-social-icons-2">
                 <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-facebook u-social-icon u-text-palette-1-base u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-ad72"></use>
